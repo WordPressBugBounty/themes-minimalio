@@ -24,10 +24,11 @@ class Minimalio_Video_Block_Detection {
         'minimalio-blocks/minimalio-vimeo-banner',
         'minimalio-blocks/minimalio-vimeo-iframe',
         'minimalio-blocks/minimalio-youtube-banner',
+        'minimalio-blocks/minimalio-video-banner',
         'minimalio-blocks/vimeo-banner',
         'minimalio-blocks/vimeo-iframe', 
         'minimalio-blocks/youtube-banner',
-        'core/embed'  // WordPress core embed block (for YouTube/Vimeo URLs)
+        'minimalio-blocks/video-banner'
     ];
     
     /**
@@ -78,8 +79,14 @@ class Minimalio_Video_Block_Detection {
         
         $key_parts = [ self::$cache_key_prefix ];
         
-        if ( is_singular() ) {
+        if ( is_singular('portfolio') ) {
+            $key_parts[] = 'portfolio_' . get_the_ID();
+        } elseif ( is_singular() ) {
             $key_parts[] = 'post_' . get_the_ID();
+        } elseif ( is_post_type_archive('portfolio') ) {
+            $key_parts[] = 'portfolio_archive';
+        } elseif ( is_tax(['portfolio-categories', 'portfolio-tags']) ) {
+            $key_parts[] = 'portfolio_tax_' . get_queried_object_id();
         } elseif ( is_home() ) {
             $key_parts[] = 'home';
         } elseif ( is_category() ) {
@@ -103,10 +110,21 @@ class Minimalio_Video_Block_Detection {
     private static function scan_for_video_blocks() {
         global $posts, $wp_query;
         
-        // Check current post/page (singular)
+        // Check current post/page (singular) - includes Portfolio posts
         if ( is_singular() ) {
             $post = get_post();
             return self::post_has_video_blocks( $post );
+        }
+        
+        // Check Portfolio-specific contexts
+        if ( is_post_type_archive('portfolio') || is_tax(['portfolio-categories', 'portfolio-tags']) ) {
+            if ( isset( $posts ) && is_array( $posts ) ) {
+                foreach ( $posts as $post ) {
+                    if ( self::post_has_video_blocks( $post ) ) {
+                        return true;
+                    }
+                }
+            }
         }
         
         // Check all posts in archive/index pages
@@ -154,6 +172,15 @@ class Minimalio_Video_Block_Detection {
             if ( $post ) {
                 $content = $post->post_content;
             }
+        } elseif ( is_post_type_archive('portfolio') || is_tax(['portfolio-categories', 'portfolio-tags']) ) {
+            // Handle Portfolio archives and taxonomy pages
+            if ( isset( $posts ) && is_array( $posts ) ) {
+                foreach ( $posts as $post ) {
+                    if ( isset( $post->post_content ) ) {
+                        $content .= $post->post_content . "\n";
+                    }
+                }
+            }
         } elseif ( isset( $posts ) && is_array( $posts ) ) {
             foreach ( $posts as $post ) {
                 if ( isset( $post->post_content ) ) {
@@ -192,11 +219,8 @@ class Minimalio_Video_Block_Detection {
      */
     private static function has_youtube_content( $content ) {
         $youtube_patterns = [
-            '/youtube\.com\/watch\?v=/',
-            '/youtu\.be\//',
-            '/\[youtube\s+.*\]/',
-            '/wp:core\/embed.*youtube/',
-            '/wp:minimalio-blocks\/.*youtube/'
+            '/wp:minimalio-blocks\/.*youtube(?!.*banner)/',  // YouTube blocks but not youtube-banner
+            '/wp:minimalio-blocks\/minimalio-video-banner/'  // Only the minimalio-video-banner block
         ];
         
         foreach ( $youtube_patterns as $pattern ) {
@@ -213,9 +237,6 @@ class Minimalio_Video_Block_Detection {
      */
     private static function has_vimeo_content( $content ) {
         $vimeo_patterns = [
-            '/vimeo\.com\/\d+/',
-            '/\[vimeo\s+.*\]/',
-            '/wp:core\/embed.*vimeo/',
             '/wp:minimalio-blocks\/.*vimeo/'
         ];
         
@@ -251,13 +272,10 @@ class Minimalio_Video_Block_Detection {
      */
     private static function has_video_embeds( $content ) {
         $video_patterns = [
-            '/youtube\.com\/watch\?v=/',
-            '/youtu\.be\//',
-            '/vimeo\.com\/\d+/',
-            '/\[video\s+.*youtube.*\]/',
-            '/\[video\s+.*vimeo.*\]/',
-            '/\[youtube\s+.*\]/',
-            '/\[vimeo\s+.*\]/'
+            '/wp:minimalio-blocks\/minimalio-video-banner/',  // Only specific video-banner block
+            '/wp:minimalio-blocks\/.*vimeo/',
+            '/wp:minimalio-blocks\/.*youtube/',
+            '/wp:minimalio-blocks\/.*banner/'  // Any banner blocks (youtube-banner, etc.)
         ];
         
         foreach ( $video_patterns as $pattern ) {
@@ -322,3 +340,6 @@ add_action( 'wp_enqueue_scripts', 'minimalio_conditional_video_scripts', 15 );
 // Clear cache on post updates
 add_action( 'save_post', [ 'Minimalio_Video_Block_Detection', 'clear_cache' ] );
 add_action( 'wp_update_nav_menu', [ 'Minimalio_Video_Block_Detection', 'clear_cache' ] );
+
+// Clear cache immediately to apply new detection patterns
+Minimalio_Video_Block_Detection::clear_cache();

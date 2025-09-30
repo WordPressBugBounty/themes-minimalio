@@ -69,7 +69,7 @@ if ( get_theme_mod( 'minimalio_settings_heading_sizes' ) !== 'default' ) {
 	" id="header">
 		<div class="header__container relative <?php echo esc_html( get_theme_mod( 'minimalio_settings_header_container_type' ) ?: 'container' ); ?>">
 
-			<?php echo get_template_part( 'templates/snippets/headers/header' ); ?>
+			<?php get_template_part( 'templates/snippets/headers/header' ); ?>
 
 			<nav class="header__mobile-button" aria-label="<?php esc_attr_e( 'Mobile Toggle', 'minimalio' ); ?>">
 			<button class="header__mobile-button absolute z-[110] block p-0 text-black bg-transparent border-none shadow-none main-header__menu-link md:hidden top-1/2 right-4 md:right-6 lg:right-8 -translate-y-2/4 appearance-auto hover:border-none mobile-toggle" data-toggle="collapse" data-link="#mobilemenu" data-target="#mobilemenu" aria-controls="<?php esc_attr_e( 'primary-menu', 'minimalio' ); ?>" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'minimalio' ); ?>">

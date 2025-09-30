@@ -46,7 +46,7 @@ $widgets = get_theme_mod( 'minimalio_settings_footer_widgets' );
 
 				<div id="copyright" class="footer__section">
 
-					<?php echo get_template_part( 'templates/snippets/footers/footer' ); ?>
+					<?php get_template_part( 'templates/snippets/footers/footer' ); ?>
 
 				</div>
 			</div>
