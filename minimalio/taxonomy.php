@@ -21,14 +21,6 @@ $post_card = minimalio_portfolio_postcard( $card );
 
 $minimalio_nr_post = '-1';
 
-// NY Customize the lightbox
-if ( get_theme_mod( 'minimalio_gallery_bg_color_settings' ) ) {
-	$minimalio_lightbox_bg = get_theme_mod( 'minimalio_gallery_bg_color_settings' );
-} else {
-	$minimalio_lightbox_bg = '#cecece'; // default lightbox background color
-}
-// End Customize the lightbox
-
 // NY is_tax() returns True for custom taxonomy archive pages,
 if ( is_tax() ) {
 	$minimalio_queried_object = get_queried_object();
@@ -50,16 +42,7 @@ if ( is_tax() ) {
 
 		<div class="row">
 
-			<main class="site-main" id="main"
-			<?php
-			if ( $minimalio_lightbox_bg ) {
-				?>
-				data-bgcolor='
-				<?php
-				echo esc_attr( $minimalio_lightbox_bg );
-			}
-			?>
-																					'>
+			<main class="site-main" id="main">
 
 				<?php if ( have_posts() ) : ?>
 					<?php

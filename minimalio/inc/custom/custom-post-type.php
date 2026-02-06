@@ -67,7 +67,7 @@ class minimalio_ARGS_Build {
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
-		'supports'           => [ 'title', 'editor', 'author', 'excerpt', 'thumbnail' ],
+		'supports'           => [ 'title', 'editor', 'author', 'excerpt', 'thumbnail', 'revisions' ],
 	];
 
 	/**
@@ -98,33 +98,33 @@ class minimalio_ARGS_Build {
 		$minimalio_labels = [
 			'name'               => sprintf(
 				_x( '%s', 'post type general name', 'minimalio' ),
-				$plural
+				ucfirst( $plural )
 			),
 			'singular_name'      => sprintf(
 				_x( '%s', 'post type singular name', 'minimalio' ),
-				$singular
+				ucfirst( $singular )
 			),
 			'menu_name'          => sprintf(
 				_x( '%s', 'admin menu', 'minimalio' ),
-				$plural
+				ucfirst( $plural )
 			),
 			'name_admin_bar'     => sprintf(
 				_x( '%s', 'add new on admin bar', 'minimalio' ),
-				$singular
+				ucfirst( $singular )
 			),
 			'add_new'            => sprintf(
 				_x( 'Add New', '%s', 'minimalio' ),
-				$singular
+				ucfirst( $singular )
 			),
-			'add_new_item'       => sprintf( __( 'Add New %s', 'minimalio' ), $singular ),
-			'new_item'           => sprintf( __( 'New %s ', 'minimalio' ), $singular ),
-			'edit_item'          => sprintf( __( 'Edit %s ', 'minimalio' ), $singular ),
-			'view_item'          => sprintf( __( 'View %s ', 'minimalio' ), $singular ),
-			'all_items'          => sprintf( __( 'All %s ', 'minimalio' ), $plural ),
-			'search_items'       => sprintf( __( 'Search %s ', 'minimalio' ), $plural ),
+			'add_new_item'       => sprintf( __( 'Add New %s', 'minimalio' ), ucfirst( $singular ) ),
+			'new_item'           => sprintf( __( 'New %s ', 'minimalio' ), ucfirst( $singular ) ),
+			'edit_item'          => sprintf( __( 'Edit %s ', 'minimalio' ), ucfirst( $singular ) ),
+			'view_item'          => sprintf( __( 'View %s ', 'minimalio' ), ucfirst( $singular ) ),
+			'all_items'          => sprintf( __( 'All %s ', 'minimalio' ), ucfirst( $plural ) ),
+			'search_items'       => sprintf( __( 'Search %s ', 'minimalio' ), ucfirst( $plural ) ),
 			'parent_item_colon'  => sprintf(
 				__( 'Parent %s: ', 'minimalio' ),
-				$plural
+				ucfirst( $plural )
 			),
 			'not_found'          => sprintf( __( 'No %s found.', 'minimalio' ), strtolower( $plural ) ),
 			'not_found_in_trash' => sprintf( __( 'No %s found in Trash.', 'minimalio' ), strtolower( $plural ) ),

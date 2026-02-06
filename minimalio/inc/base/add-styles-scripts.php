@@ -17,7 +17,7 @@ if ( ! function_exists( 'minimalio_scripts' ) ) {
 	function minimalio_scripts() {
 		$directory = get_template_directory_uri();
 
-		$ver = file_get_contents( get_template_directory() . '/assets/dist/cache-buster' );
+		$ver = MINIMALIO_VERSION;
 
 		/**
 		 * Load the compiled and minified stylesheet

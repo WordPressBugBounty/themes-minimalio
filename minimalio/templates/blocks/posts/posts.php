@@ -6,7 +6,9 @@ defined('ABSPATH') || exit;
 /* Make the global query and post objects available */
 global $wp_query, $post;
 if ($pagination_option == 'pagination') {
-  $posts_page = $nr_post;
+  // Always use WordPress default posts_per_page setting from Reading settings
+  // This ensures pagination works correctly and avoids 404 errors
+  $posts_page = get_option('posts_per_page');
 } else {
   $posts_page = '-1';
 };
@@ -73,8 +75,6 @@ if ($check_tag !== 'all') {
     'paged' => $current_page,
     'orderby' => 'date',
     'order' => 'DESC',
-    'lwd_paginate' => $posts_page,
-    'taxonomy_name' => $taxonomy_name,
   );
 } elseif ($check_author !== 'all') {
   $args_search = array(
@@ -85,8 +85,6 @@ if ($check_tag !== 'all') {
     'paged' => $current_page,
     'orderby' => 'date',
     'order' => 'DESC',
-    'lwd_paginate' => $posts_page,
-    'taxonomy_name' => $taxonomy_name,
   );
 } elseif ($check_date !== 'all') {
   $args_search = array(
@@ -97,7 +95,6 @@ if ($check_tag !== 'all') {
     'date_query' => $check_date,
     'orderby' => 'date',
     'order' => 'DESC',
-    'lwd_paginate' => $posts_page,
   );
 } elseif ($check_taxonomy !== 'all') {
   $args_search = array(
@@ -111,8 +108,6 @@ if ($check_tag !== 'all') {
         'terms' => $taxonomy_id,
       ),
     ),
-    'lwd_paginate' => $posts_page,
-    'taxonomy_name' => $taxonomy_name,
   );
 } else {
   $args_search = array(
@@ -123,14 +118,39 @@ if ($check_tag !== 'all') {
     'paged' => $current_page,
     'orderby' => 'date',
     'order' => 'DESC',
-    'lwd_paginate' => $posts_page,
-    'taxonomy_name' => $taxonomy_name,
   );
 }
 
-$search = new Minimalio_SearchFilter(
-  $args_search
-);
+// Handle category filter from GET parameter
+if (isset($_GET['category']) && !empty($_GET['category'])) {
+  // Check if tax_query already exists
+  if (isset($args_search['tax_query'])) {
+    // Add to existing tax_query
+    $args_search['tax_query'][] = array(
+      'taxonomy' => $taxonomy_name,
+      'field' => 'slug',
+      'terms' => array($_GET['category']),
+    );
+    // Set relationship for multiple taxonomies
+    $args_search['tax_query']['relation'] = 'AND';
+  } else {
+    // Create new tax_query
+    $args_search['tax_query'] = array(
+      array(
+        'taxonomy' => $taxonomy_name,
+        'field' => 'slug',
+        'terms' => array($_GET['category']),
+      ),
+    );
+  }
+}
+
+// Run WP_Query directly instead of using Minimalio_SearchFilter
+// Store original wp_query to restore later
+$original_query = $wp_query;
+$wp_query = new WP_Query($args_search);
+$search = $wp_query;
+$search->results = $search->posts;
 
 /* Pagination rules */
 $args = array(
@@ -164,20 +184,8 @@ if (!isset($_GET['category']) || !$_GET['category']) {
   $category_selected = $_GET['category'];
 }
 
-/** Current URL */
-$current_url = $_SERVER['REQUEST_URI'];
-
-if (str_contains($current_url, 'page')) {
-  for ($i = 1; $i <= 100; $i++) {
-    $delete = '/page/' . $i . '/';
-
-    if (str_contains($current_url, '/' . $i . '/')) {
-      $clean_url = str_replace($delete, '', $current_url);
-    }
-  }
-} else {
-  $clean_url = $current_url;
-}
+/** Current URL - Remove pagination from current URL */
+$clean_url = remove_query_arg( array( 'paged', 'page' ), get_pagenum_link( 1 ) );
 
 if (get_theme_mod('minimalio_settings_post_cart_button_label')) {
   $button_label = get_theme_mod('minimalio_settings_post_cart_button_label');
@@ -296,11 +304,22 @@ if ($search) :
 
             <div class="mt-8 posts__pagination pagination">
               <?php
-              the_posts_pagination(array(
+              // Build pagination with proper query context and preserve GET parameters
+              $pagination_args = array(
                 'mid_size' => 2,
                 'prev_text' => __('Previous Page', 'minimalio'),
                 'next_text' => __('Next Page', 'minimalio'),
-              )); ?>
+                'total' => $wp_query->max_num_pages,
+                'current' => max(1, $current_page),
+              );
+
+              // Preserve category parameter in pagination links
+              if (isset($_GET['category']) && !empty($_GET['category'])) {
+                $pagination_args['add_args'] = array('category' => $_GET['category']);
+              }
+
+              the_posts_pagination($pagination_args);
+              ?>
             </div>
 
       </div>
@@ -308,3 +327,9 @@ if ($search) :
     </div>
 
   <?php endif; ?>
+
+  <?php
+  // Restore original query
+  $wp_query = $original_query;
+  wp_reset_postdata();
+  ?>

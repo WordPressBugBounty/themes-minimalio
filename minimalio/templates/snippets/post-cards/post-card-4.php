@@ -8,15 +8,15 @@
 	<div class="<?php echo esc_attr( $minimalio_hover ); ?>" data-card-id="<?php echo esc_attr( $id ); ?>">
 		<?php if ( $card_image ) : ?>
 			<figure class="relative flex flex-col w-full text-left post-card post-card-4 photoswipe-item photoswipe-html" data-card-id="<?php echo esc_attr( $id ); ?>">
-
-				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>" data-width="<?php echo esc_attr( wp_get_attachment_image_src( $card_image, 'full' )[1] ); ?>" data-height="<?php echo esc_attr( wp_get_attachment_image_src( $card_image, 'full' )[2] ); ?>">
+				<?php $image_data = wp_get_attachment_image_src( $card_image, 'full' ) ?: [ 0, 0, 0 ]; ?>
+				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>" data-width="<?php echo esc_attr( $image_data[1] ); ?>" data-height="<?php echo esc_attr( $image_data[2] ); ?>">
 				<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
 					<?php
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {
-						echo esc_html( wp_get_attachment_image( $minimalio_hover_image, 'full', '', [ 'class' => 'hover-image' ] ) );}
+						echo wp_get_attachment_image( $minimalio_hover_image, 'full', '', [ 'class' => 'hover-image' ] );}
 
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_video ) && $minimalio_hover === 'hover-video' ) {
-						echo esc_html( '<video class="portfolio-hover-video" loop muted preload="none"><source src="' ) . esc_html( wp_get_attachment_url( $minimalio_hover_video ) ) . esc_html( '" type="video/mp4"></video>' );
+						echo '<video class="portfolio-hover-video" loop muted preload="none"><source src="' . wp_get_attachment_url( $minimalio_hover_video ) . '" type="video/mp4"></video>';
 					}
 					?>
 					<div class="absolute top-0 bottom-0 left-0 right-0 z-10 transition-opacity duration-300 bg-black opacity-0 post-card__overlay"></div>
@@ -40,7 +40,7 @@
 				</<?php echo esc_attr( $heading_type ); ?>>
 			<?php endif; ?>
 
-			<?php if ( $card_category ) : ?>
+			<?php if ( is_array( $card_category ) && ! empty( $card_category ) ) : ?>
 				<div class="post-card__categories">
 					<?php
 					$minimalio_i = 0;
@@ -67,8 +67,8 @@
 
 		<?php if ( $card_image ) : ?>
 			<figure class="relative flex flex-col w-full text-left post-card post-card-4 photoswipe-item photoswipe-vimeo" data-card-id="<?php echo esc_attr( $id ); ?>">
-
-				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>" data-width="<?php echo esc_attr( wp_get_attachment_image_src( $card_image, 'full' )[1] ); ?>" data-height="<?php echo esc_attr( wp_get_attachment_image_src( $card_image, 'full' )[2] ); ?>">
+				<?php $image_data = wp_get_attachment_image_src( $card_image, 'full' ) ?: [ 0, 0, 0 ]; ?>
+				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>" data-width="<?php echo esc_attr( $image_data[1] ); ?>" data-height="<?php echo esc_attr( $image_data[2] ); ?>">
 				<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
 					<?php
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {
@@ -123,7 +123,7 @@
 
 <?php else : ?>
 
-	<div class="post-card post-card-4 relative w-full flex flex-col text-left<?php echo esc_attr( $minimalio_hover ); ?>" data-card-id="<?php echo esc_attr( $id ); ?>">
+	<div class="post-card post-card-4 relative w-full flex flex-col text-left <?php echo esc_attr( $minimalio_hover ); ?>" data-card-id="<?php echo esc_attr( $id ); ?>">
 		<?php if ( $link_url ) : ?>
 			<a class="absolute top-0 bottom-0 left-0 right-0 z-20 no-underline opacity-0 post-card__link" href="<?php echo esc_url( $link_url ); ?>">
 				<?php echo esc_html( $card_title ); ?>
@@ -156,7 +156,7 @@
 			<?php endif; ?>
 
 
-			<?php if ( $card_category ) : ?>
+			<?php if ( is_array( $card_category ) && ! empty( $card_category ) ) : ?>
 				<div class="post-card__categories">
 					<?php
 					$minimalio_i = 0;

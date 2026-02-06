@@ -192,11 +192,13 @@
 
 		});
 
-		// Only show blog posts per page if paginatin is enabled.
+		// Hide blog posts per page when 'no' or 'pagination' is selected (uses WordPress default)
 		wp.customize('minimalio_settings_blog_pagination', function (setting) {
 			wp.customize.control('minimalio_options_blog_posts_per_page', function (control) {
 				var visibility = function () {
-					if ('no' !== setting.get()) {
+					var value = setting.get();
+					// Only show if not 'no' and not 'pagination'
+					if ('no' !== value && 'pagination' !== value) {
 						control.container.slideDown(180);
 					} else {
 						control.container.slideUp(180);
@@ -559,6 +561,48 @@
 			wp.customize.control('minimalio__options_container_width', function (control) {
 				var visibility = function () {
 					if ('container' === setting.get()) {
+						control.container.slideDown(180);
+					} else {
+						control.container.slideUp(180);
+					}
+				};
+
+				visibility();
+				setting.bind(visibility);
+			});
+		});
+
+		// Only show lightbox caption styling options when captions are enabled
+		wp.customize('minimalio_lightbox_show_captions_settings', function (setting) {
+			wp.customize.control('minimalio_lightbox_captions_bg_color_control', function (control) {
+				var visibility = function () {
+					if ('yes' === setting.get()) {
+						control.container.slideDown(180);
+					} else {
+						control.container.slideUp(180);
+					}
+				};
+
+				visibility();
+				setting.bind(visibility);
+			});
+
+			wp.customize.control('minimalio_lightbox_captions_font_color_control', function (control) {
+				var visibility = function () {
+					if ('yes' === setting.get()) {
+						control.container.slideDown(180);
+					} else {
+						control.container.slideUp(180);
+					}
+				};
+
+				visibility();
+				setting.bind(visibility);
+			});
+
+			wp.customize.control('minimalio_lightbox_captions_font_size_control', function (control) {
+				var visibility = function () {
+					if ('yes' === setting.get()) {
 						control.container.slideDown(180);
 					} else {
 						control.container.slideUp(180);

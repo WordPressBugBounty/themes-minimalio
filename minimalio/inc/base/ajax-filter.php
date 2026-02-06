@@ -9,9 +9,6 @@
 defined( 'ABSPATH' ) || exit;
 
 function minimalio_filter_ajax() {
-	// Check rate limit
-	minimalio_check_ajax_rate_limit();
-	
 	// Verify nonce
 	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'minimalio_ajax_nonce' ) ) {
 		wp_die( __( 'Security check failed', 'minimalio' ), 403 );
@@ -149,9 +146,6 @@ add_action( 'wp_ajax_nopriv_filter', 'minimalio_filter_ajax' );
 
 // Load more ajax
 function minimalio_load_ajax() {
-	// Check rate limit
-	minimalio_check_ajax_rate_limit();
-	
 	// Verify nonce
 	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'minimalio_ajax_nonce' ) ) {
 		wp_die( __( 'Security check failed', 'minimalio' ), 403 );

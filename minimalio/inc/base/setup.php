@@ -85,44 +85,17 @@ if ( ! function_exists( 'minimalio_setup' ) ) {
 
 		add_theme_support( 'starter-content', array(
 			'posts' => [
-				'home' => [
+				'theme-preview' => [
 					'post_type' => 'page',
-					'post_title' => 'Home',
-					'post_content' => file_get_contents(__DIR__ . '/preview-content.html'),
-				],
-				'blog' => [
-					'post_type' => 'page',
-					'post_title' => 'Blog',
-					'post_content' => 'This is where your blog posts will appear.',
+					'post_title' => 'Theme Preview',
+					'post_content' => file_exists(__DIR__ . '/preview-content.html') ? file_get_contents(__DIR__ . '/preview-content.html') : '',
 				],
 			],
 			'options' => [
 				'show_on_front' => 'page',
-				'page_on_front' => '{{home}}',
-				'page_for_posts' => '{{blog}}',
+				'page_on_front' => '{{theme-preview}}',
 			],
-			'nav_menus' => array(
-				'primary' => array(
-					'name' => __( 'Primary Menu', 'minimalio' ),
-					'items' => array(
-						'custom_portfolio' => array(
-							'type'  => 'custom',
-							'title' => 'Portfolio',
-							'url'   => '#',
-						),
-						'custom_blog' => array(
-							'type'  => 'custom',
-							'title' => 'Blog',
-							'url'   => '#',
-						),
-						'custom_about' => array(
-							'type'  => 'custom',
-							'title' => 'About Me',
-							'url'   => '#',
-						),
-					),
-				),
-			),
+			
 		),
 	);
 	}

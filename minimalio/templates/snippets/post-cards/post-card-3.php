@@ -9,10 +9,10 @@
 		data-card-id="<?php echo esc_attr( $id ); ?>">
 		<?php if ( $card_image ) : ?>
 			<figure class="relative flex flex-col w-full text-left post-card post-card-3 photoswipe-item photoswipe-html" data-card-id="<?php echo esc_attr( $id ); ?>">
-
+				<?php $image_data = wp_get_attachment_image_src( $card_image, 'full' ) ?: [ 0, 0, 0 ]; ?>
 				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>"
-					data-width="<?php echo wp_get_attachment_image_src( $card_image, 'full' )[1]; ?>"
-					data-height="<?php echo wp_get_attachment_image_src( $card_image, 'full' )[2]; ?>">
+					data-width="<?php echo $image_data[1]; ?>"
+					data-height="<?php echo $image_data[2]; ?>">
 					<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
 					<?php
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {
@@ -31,7 +31,7 @@
 							</<?php echo esc_attr( $heading_type ); ?>>
 						<?php endif; ?>
 
-						<?php if ( $card_category ) : ?>
+						<?php if ( is_array( $card_category ) && ! empty( $card_category ) ) : ?>
 							<div class="hidden post-card__categories md:block">
 								<?php
 								$minimalio_i = 0;
@@ -70,10 +70,10 @@
 
 		<?php if ( $card_image ) : ?>
 			<figure class="relative flex flex-col w-full text-left post-card post-card-3 photoswipe-item photoswipe-vimeo" data-card-id="<?php echo esc_attr( $id ); ?>">
-
+				<?php $image_data = wp_get_attachment_image_src( $card_image, 'full' ) ?: [ 0, 0, 0 ]; ?>
 				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>"
-					data-width="<?php echo wp_get_attachment_image_src( $card_image, 'full' )[1]; ?>"
-					data-height="<?php echo wp_get_attachment_image_src( $card_image, 'full' )[2]; ?>">
+					data-width="<?php echo $image_data[1]; ?>"
+					data-height="<?php echo $image_data[2]; ?>">
 					<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
 					<?php
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {
@@ -93,7 +93,7 @@
 							</<?php echo esc_attr( $heading_type ); ?>>
 						<?php endif; ?>
 
-						<?php if ( $card_category ) : ?>
+						<?php if ( is_array( $card_category ) && ! empty( $card_category ) ) : ?>
 							<div class="hidden post-card__categories md:block">
 								<?php
 								$minimalio_i = 0;
@@ -164,7 +164,7 @@
 			<?php endif; ?>
 
 
-			<?php if ( $card_category ) : ?>
+			<?php if ( is_array( $card_category ) && ! empty( $card_category ) ) : ?>
 				<div class="hidden post-card__categories md:block">
 					<?php
 					$minimalio_i = 0;

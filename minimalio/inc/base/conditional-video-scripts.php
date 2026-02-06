@@ -200,17 +200,17 @@ class Minimalio_Video_Block_Detection {
             'youtube' => false,
             'vimeo' => false
         ];
-        
-        // Check for YouTube content
-        if ( self::has_youtube_content( $content ) ) {
+
+        // Check for YouTube content - includes YouTube Banner blocks
+        if ( self::has_youtube_content( $content ) || self::has_youtube_banner( $content ) ) {
             $result['youtube'] = true;
         }
-        
-        // Check for Vimeo content - includes Vimeo Banner, Vimeo iFrame, and YouTube Banner
-        if ( self::has_vimeo_content( $content ) || self::has_youtube_banner( $content ) ) {
+
+        // Check for Vimeo content - includes Vimeo Banner and Vimeo iFrame
+        if ( self::has_vimeo_content( $content ) ) {
             $result['vimeo'] = true;
         }
-        
+
         return $result;
     }
     
@@ -219,16 +219,15 @@ class Minimalio_Video_Block_Detection {
      */
     private static function has_youtube_content( $content ) {
         $youtube_patterns = [
-            '/wp:minimalio-blocks\/.*youtube(?!.*banner)/',  // YouTube blocks but not youtube-banner
-            '/wp:minimalio-blocks\/minimalio-video-banner/'  // Only the minimalio-video-banner block
+            '/wp:minimalio-blocks\/minimalio-video-banner/'  // Video banner block
         ];
-        
+
         foreach ( $youtube_patterns as $pattern ) {
             if ( preg_match( $pattern, $content ) ) {
                 return true;
             }
         }
-        
+
         return false;
     }
     
@@ -250,7 +249,7 @@ class Minimalio_Video_Block_Detection {
     }
     
     /**
-     * Check for YouTube Banner blocks (requires Vimeo script)
+     * Check for YouTube Banner blocks
      */
     private static function has_youtube_banner( $content ) {
         $youtube_banner_patterns = [
@@ -309,7 +308,7 @@ function minimalio_conditional_video_scripts() {
     $video_detection = Minimalio_Video_Block_Detection::detect_video_blocks();
     
     $directory = get_template_directory_uri();
-    $ver = file_get_contents( get_template_directory() . '/assets/dist/cache-buster' );
+    $ver = MINIMALIO_VERSION;
     
     // Load YouTube script if YouTube content detected
     if ( $video_detection['youtube'] ) {

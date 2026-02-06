@@ -62,7 +62,7 @@ class minimalio__Loader {
 		// To load a typekit "kit" simply use the `load_typekit` function
 		// containing the kit ID as the first and only parameter.
 		$selected_font = get_theme_mod( 'minimalio_typography_settings_google_font' );
-		
+
 		if ( false !== $selected_font ) {
 			// Array of web safe fonts that should not be loaded from Google Fonts
 			$safe_fonts = [
@@ -75,11 +75,17 @@ class minimalio__Loader {
 				'Courier+New',
 				'Brush+Script+MT'
 			];
-			
+
 			// Only load from Google Fonts if it's not a web-safe font
 			if ( ! in_array( $selected_font, $safe_fonts ) ) {
+				// Get the selected weight and ensure 700 is also loaded
+				$selected_weight = get_theme_mod( 'minimalio_typography_settings_google_font_wight', 400 );
+				$weights = array_unique( [ $selected_weight, '700' ] );
+				sort( $weights );
+				$weights_string = implode( ';', $weights );
+
 				echo '	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=' . $selected_font . ':wght@' . get_theme_mod( 'minimalio_typography_settings_google_font_wight', 400 ) . '&display=swap">';
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=' . $selected_font . ':wght@' . $weights_string . '&display=swap">';
 			}
 		}
 	}

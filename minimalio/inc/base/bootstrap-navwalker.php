@@ -127,31 +127,9 @@ class Minimalio_BemNavWalker extends Walker {
 			$classes[] = 'menu-item__open-parent';
 		}
 
-		// Special class for portfolio
-		$currentPageUrl = $_SERVER['REQUEST_URI'];
-		$website        = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]" . '/';
-		$actual_link    = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		$slug           = get_theme_mod( 'minimalio_settings_portfolio_slug' );
-		$home_portfolio = get_theme_mod( 'minimalio_settings_portfolio_home' );
-		$menu_slug      = str_replace( $website, '', $item->url );
-
-		if ( get_theme_mod( 'minimalio_settings_portfolio_slug' ) ) {
-			$portfolio_slug = get_theme_mod( 'minimalio_settings_portfolio_slug' );
-		} else {
-			$portfolio_slug = 'portfolio';
-		}
-
-		if ( $menu_slug === $portfolio_slug || str_replace( '/', '', $menu_slug ) === $portfolio_slug ) {
-			$classes[] = 'portfolio';
-		}
-
-		// Check if portfolio is home page
-		if ( $home_portfolio === 'yes' ) {
-
-			if ( $actual_link === $item->url || $actual_link === $item->url . '/' ) {
-
-				$classes[] = 'portfolio';
-			}
+		// Add class to parent if one of its children is active (only when open menu is enabled)
+		if ( $open_menu === 'yes' && ( in_array( 'current-menu-ancestor', $classes ) || in_array( 'current-menu-parent', $classes ) ) ) {
+			$classes[] = 'menu-item__has-active-child';
 		}
 
 		/* Add our BEM class */

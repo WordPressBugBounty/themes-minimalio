@@ -167,8 +167,9 @@ function minimalio_get_svg( $name, $atts = [], $method = 'use' ) {
 	switch ( $method ) {
 		case 'inline': {
 				// Output the SVG element inline
-				$path   = get_template_directory() . '/assets/dist/vectors/';
-				$output = file_get_contents( $path . $name . '.svg' );
+				$path     = get_template_directory() . '/assets/dist/vectors/';
+				$svg_file = $path . $name . '.svg';
+				$output   = file_exists( $svg_file ) ? file_get_contents( $svg_file ) : '';
 				break;
 		}
 		case 'img': {
@@ -410,9 +411,18 @@ function minimalio_getGooglefonts() {
 	$url            = 'https://www.googleapis.com/webfonts/v1/webfonts?key=' .
 	$google_api_key;
 	$response       = wp_safe_remote_get( $url );
-	if ( ! is_wp_error( $response ) ) {
-		$fonts_list = json_decode( $response['body'], true );
+
+	// Check if request was successful
+	if ( ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {
+		$body = wp_remote_retrieve_body( $response );
+		$fonts_list = json_decode( $body, true );
+
+		// Validate response structure
+		if ( ! is_array( $fonts_list ) ) {
+			$fonts_list = [];
+		}
 	}
+
 	return $fonts_list;
 }
 
@@ -445,14 +455,27 @@ function minimalio_getGooglefontWeight() {
 			$url            = 'https://www.googleapis.com/webfonts/v1/webfonts?family=' .
 			$currentFontStyle . '&key=' . $google_api_key;
 			$response       = wp_safe_remote_get( $url );
-			if ( ! is_wp_error( $response ) || $response['response']['code'] !== 200 ) {
+
+			// Check if request was successful
+			if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
+				// Return default weight if API call fails
 				return [
 					'400' => __( '400', 'minimalio' ),
 				];
-			} else {
-				$fontWeightsList = json_decode( $response['body'], true );
+			}
+
+			// Parse the successful response
+			$fontWeightsList = json_decode( wp_remote_retrieve_body( $response ), true );
+
+			// Validate the response structure
+			if ( isset( $fontWeightsList['items'][0]['variants'] ) && is_array( $fontWeightsList['items'][0]['variants'] ) ) {
 				return $fontWeightsList['items'][0]['variants'];
 			}
+
+			// Fallback if response structure is unexpected
+			return [
+				'400' => __( '400', 'minimalio' ),
+			];
 		}
 	} else {
 		return [

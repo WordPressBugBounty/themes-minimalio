@@ -22,7 +22,7 @@
 	<?php endif; ?>
 
 
-	<?php if ( $card_category ) : ?>
+	<?php if ( is_array( $card_category ) && ! empty( $card_category ) ) : ?>
 	<div class="pb-4 post-card__categories">
 		<?php
 		$minimalio_i = 0;
@@ -60,7 +60,7 @@
 	?>
 	</div>
 
-	<?php if ( $card_tag ) : ?>
+	<?php if ( is_array( $card_tag ) && ! empty( $card_tag ) ) : ?>
 	<div class="pb-4 post-card__tags">
 		<?php
 		$minimalio_i = 0;

@@ -217,15 +217,15 @@ if (! function_exists('minimalio_post_nav')) {
 			<div class="justify-between w-full row nav__links">
 				<div>
 				<?php
-				if (get_previous_post_link()) {
-					previous_post_link('<span class="w-auto nav-previous">%link</span>', _x('<&nbsp;%title', 'Previous post link', 'minimalio'));
+				if (get_next_post_link()) {
+					next_post_link('<span class="w-auto nav-next">%link</span>');
 				}
 				?>
 				</div>
 				<div>
 				<?php
-				if (get_next_post_link()) {
-					next_post_link('<span class="w-auto nav-next">%link</span>', _x('%title&nbsp;>', 'Next post link', 'minimalio'));
+				if (get_previous_post_link()) {
+					previous_post_link('<span class="w-auto nav-previous">%link</span>');
 				}
 				?>
 				</div>

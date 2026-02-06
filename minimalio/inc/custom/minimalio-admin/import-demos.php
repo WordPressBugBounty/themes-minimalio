@@ -9,39 +9,202 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Fetch remote demos from GitHub
+ * Get hardcoded demos data
+ * Used when plugin is not active (WordPress.org theme requirements)
  */
-function minimalio_get_remote_demos() {
-    $demos_url = 'https://raw.githubusercontent.com/MikulasKarpeta/demos/main/demos.json';
-    $transient_key = 'minimalio_remote_demos';
-    
-    // Try to get cached data first (cache for 1 hour)
-    $demos = get_transient($transient_key);
-    
-    if (false === $demos) {
-        $response = wp_remote_get($demos_url, array(
-            'timeout' => 10,
-            'user-agent' => 'Minimalio Theme Demo Loader'
-        ));
-        
-        if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
-            $body = wp_remote_retrieve_body($response);
-            $demos_data = json_decode($body, true);
-            
-            if ($demos_data && isset($demos_data['demos'])) {
-                $demos = $demos_data;
-                // Cache for 1 hour
-                set_transient($transient_key, $demos, HOUR_IN_SECONDS);
-            } else {
-                $demos = false;
-            }
-        } else {
-            // Return false if remote loading fails
-            $demos = false;
-        }
+function minimalio_get_hardcoded_demos() {
+    $demos_image_path = get_template_directory_uri() . '/inc/custom/minimalio-admin/images/demos/';
+
+    return array(
+        'demos' => array(
+            array(
+                'id' => 'john',
+                'name' => 'John',
+                'image' => $demos_image_path . 'john-minimalio.webp',
+                'preview_url' => 'https://john.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'jane',
+                'name' => 'Jane',
+                'image' => $demos_image_path . 'jane-minimalio.webp',
+                'preview_url' => 'https://jane.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'caroline',
+                'name' => 'Caroline',
+                'image' => $demos_image_path . 'caroline-minimalio.webp',
+                'preview_url' => 'https://caroline.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'stefan',
+                'name' => 'Stefan',
+                'image' => $demos_image_path . 'stefan-minimalio.webp',
+                'preview_url' => 'https://stefan.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'alex',
+                'name' => 'Alex',
+                'image' => $demos_image_path . 'alex-minimalio.webp',
+                'preview_url' => 'https://alex.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'george',
+                'name' => 'George',
+                'image' => $demos_image_path . 'george-minimalio.webp',
+                'preview_url' => 'https://george.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'teresa',
+                'name' => 'Teresa',
+                'image' => $demos_image_path . 'teresa-minimalio.webp',
+                'preview_url' => 'https://teresa.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'sofia',
+                'name' => 'Sofia',
+                'image' => $demos_image_path . 'sofia-minimalio.webp',
+                'preview_url' => 'https://sofia.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'samuel',
+                'name' => 'Samuel',
+                'image' => $demos_image_path . 'samuel-minimalio.webp',
+                'preview_url' => 'https://samuel.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'richard',
+                'name' => 'Richard',
+                'image' => $demos_image_path . 'richard-minimalio.webp',
+                'preview_url' => 'https://richard.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'nicole',
+                'name' => 'Nicole',
+                'image' => $demos_image_path . 'nicole-minimalio.webp',
+                'preview_url' => 'https://nicole.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'mark',
+                'name' => 'Mark',
+                'image' => $demos_image_path . 'mark-minimalio.webp',
+                'preview_url' => 'https://mark.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'francis',
+                'name' => 'Francis',
+                'image' => $demos_image_path . 'francis-minimalio.webp',
+                'preview_url' => 'https://francis.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'jimmy',
+                'name' => 'Jimmy',
+                'image' => $demos_image_path . 'jimmy-minimalio.webp',
+                'preview_url' => 'https://jimmy.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'lucy',
+                'name' => 'Lucy',
+                'image' => $demos_image_path . 'lucy-minimalio.webp',
+                'preview_url' => 'https://lucy.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'alfred',
+                'name' => 'Alfred',
+                'image' => $demos_image_path . 'alfred-minimalio.webp',
+                'preview_url' => 'https://alfred.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'tony',
+                'name' => 'Tony',
+                'image' => $demos_image_path . 'tony-minimalio.webp',
+                'preview_url' => 'https://tony.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'eadweard',
+                'name' => 'Eadweard',
+                'image' => $demos_image_path . 'eadweard-minimalio.webp',
+                'preview_url' => 'https://eadweard.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+              array(
+                'id' => 'charles',
+                'name' => 'Charles',
+                'image' => $demos_image_path . 'charles-minimalio.webp',
+                'preview_url' => 'https://charles.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+            array(
+                'id' => 'hal',
+                'name' => 'Hal',
+                'image' => $demos_image_path . 'hal-minimalio.webp',
+                'preview_url' => 'https://hal.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
+        ),
+        'last_updated' => '2025-06-26'
+    );
+}
+
+/**
+ * Get demos data
+ * Allows plugin to override with remote data via filter
+ */
+function minimalio_get_demos_data() {
+    // Get hardcoded demos as default
+    $demos_data = minimalio_get_hardcoded_demos();
+
+    /**
+     * Filter demos data
+     * Allows plugins (like minimalio-portfolio) to provide remote data
+     *
+     * @param array $demos_data Default hardcoded demos data
+     */
+    $filtered_data = apply_filters( 'minimalio_demos_data', $demos_data );
+
+    // Validate filter return value to prevent errors from malformed plugin data
+    if ( ! is_array( $filtered_data ) || ! isset( $filtered_data['demos'] ) || ! is_array( $filtered_data['demos'] ) ) {
+        error_log( 'Minimalio: Invalid demos data returned from filter, using hardcoded fallback' );
+        return $demos_data; // Return original hardcoded data as fallback
     }
-    
-    return $demos;
+
+    return $filtered_data;
 }
 
 
@@ -50,10 +213,13 @@ function minimalio_get_remote_demos() {
  */
 function minimalio_demos_page() {
     // Check if minimalio-portfolio plugin is active
+    if ( ! function_exists( 'is_plugin_active' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
     $is_portfolio_plugin_active = is_plugin_active( 'minimalio-portfolio/minimalio-portfolio.php' );
-    
-    // Get remote demos
-    $demos_data = minimalio_get_remote_demos();
+
+    // Get demos data (hardcoded by default, can be overridden by plugin filter)
+    $demos_data = minimalio_get_demos_data();
     $demos = ($demos_data && isset($demos_data['demos'])) ? $demos_data['demos'] : array();
     ?>
     <div class="wrap minimalio-admin-page">
@@ -94,25 +260,34 @@ function minimalio_demos_page() {
                 </div>
             <?php else: ?>
                 <?php foreach ( $demos as $demo ): ?>
-                    <div class="minimalio-demo-item" data-demo-id="<?php echo esc_attr( $demo['id'] ); ?>">
+                    <?php
+                    // Safely extract demo data with fallbacks
+                    $demo_id = isset($demo['id']) ? $demo['id'] : '';
+                    $demo_image = isset($demo['image']) ? $demo['image'] : '';
+                    $demo_name = isset($demo['name']) ? $demo['name'] : __('Unknown Demo', 'minimalio');
+                    $demo_content_url = isset($demo['content_url']) ? $demo['content_url'] : '';
+                    $demo_settings_url = isset($demo['settings_url']) ? $demo['settings_url'] : '';
+                    $demo_preview_url = isset($demo['preview_url']) ? $demo['preview_url'] : '';
+                    ?>
+                    <div class="minimalio-demo-item" data-demo-id="<?php echo esc_attr( $demo_id ); ?>">
                         <div class="minimalio-demo-preview">
-                            <img src="<?php echo esc_url( $demo['image'] ); ?>" alt="<?php echo esc_attr( $demo['name'] . ' Demo' ); ?>">
+                            <img src="<?php echo esc_url( $demo_image ); ?>" alt="<?php echo esc_attr( $demo_name . ' Demo' ); ?>">
                         </div>
                         <div class="minimalio-demo-info">
-                            <h3><?php echo esc_html( $demo['name'] ); ?></h3>
+                            <h3><?php echo esc_html( $demo_name ); ?></h3>
                             <div class="minimalio-demo-actions">
                                 <?php if ( $is_portfolio_plugin_active ): ?>
-                                    <?php if ( !empty($demo['content_url']) ): ?>
-                                        <a href="#" class="button button-primary minimalio-import-content" 
-                                           data-demo-type="<?php echo esc_attr( $demo['id'] ); ?>"
-                                           data-content-url="<?php echo esc_url( $demo['content_url'] ); ?>">
+                                    <?php if ( !empty($demo_content_url) ): ?>
+                                        <a href="#" class="button button-primary minimalio-import-content"
+                                           data-demo-type="<?php echo esc_attr( $demo_id ); ?>"
+                                           data-content-url="<?php echo esc_url( $demo_content_url ); ?>">
                                             <?php _e( 'Import Content', 'minimalio' ); ?>
                                         </a>
                                     <?php endif; ?>
-                                    <?php if ( !empty($demo['settings_url']) ): ?>
-                                        <a href="#" class="button button-secondary minimalio-import-settings" 
-                                           data-demo-type="<?php echo esc_attr( $demo['id'] ); ?>"
-                                           data-settings-url="<?php echo esc_url( $demo['settings_url'] ); ?>">
+                                    <?php if ( !empty($demo_settings_url) ): ?>
+                                        <a href="#" class="button button-secondary minimalio-import-settings"
+                                           data-demo-type="<?php echo esc_attr( $demo_id ); ?>"
+                                           data-settings-url="<?php echo esc_url( $demo_settings_url ); ?>">
                                             <?php _e( 'Import Settings', 'minimalio' ); ?>
                                         </a>
                                     <?php endif; ?>
@@ -124,9 +299,11 @@ function minimalio_demos_page() {
                                         <?php _e( 'Import Settings', 'minimalio' ); ?>
                                     </span>
                                 <?php endif; ?>
-                                <a href="<?php echo esc_url( $demo['preview_url'] ); ?>" class="button minimalio-premium-button" target="_blank">
-                                    <?php _e( 'Preview', 'minimalio' ); ?>
-                                </a>
+                                <?php if ( !empty($demo_preview_url) ): ?>
+                                    <a href="<?php echo esc_url( $demo_preview_url ); ?>" class="button minimalio-premium-button" target="_blank">
+                                        <?php _e( 'Preview', 'minimalio' ); ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -134,19 +311,23 @@ function minimalio_demos_page() {
             <?php endif; ?>
         </div>
         
+        <?php if ( ! $is_portfolio_plugin_active ): ?>
+            <div class="minimalio-admin-card">
+                <h2><?php _e( 'View all demos at Minimalio website', 'minimalio' ); ?></h2>
+                <p><?php _e( 'There might be some new ones...', 'minimalio' ); ?></p>
+                <a href="https://minimalio.org/demos" target="_blank" class="button button-primary minimalio-premium-button">
+                    <?php _e( 'All Demos', 'minimalio' ); ?>
+                </a>
+            </div>
+        <?php endif; ?>
+
         <?php if ( current_user_can( 'manage_options' ) ): ?>
             <div class="minimalio-admin-info">
-                <h3><?php _e( 'Demo Management', 'minimalio' ); ?></h3>
-                <p>
-                    <a href="<?php echo add_query_arg( 'refresh_demos', '1' ); ?>" class="button">
-                        <?php _e( 'Refresh Demos', 'minimalio' ); ?>
-                    </a>
-                </p>
-                
                 <?php
                 /**
                  * Allow plugins to add content to the demo management section
-                 * 
+                 * Plugin can add refresh functionality here
+                 *
                  * @since 1.0.0
                  */
                 do_action( 'minimalio_demo_management_section' );
@@ -155,17 +336,4 @@ function minimalio_demos_page() {
         <?php endif; ?>
     </div>
     <?php
-}
-
-/**
- * Handle demo cache refresh
- */
-add_action( 'admin_init', 'minimalio_handle_demo_refresh' );
-function minimalio_handle_demo_refresh() {
-    if ( isset( $_GET['refresh_demos'] ) && current_user_can( 'manage_options' ) ) {
-        delete_transient( 'minimalio_remote_demos' );
-        wp_redirect( remove_query_arg( 'refresh_demos' ) );
-        exit;
-    }
-    
 }

@@ -45,6 +45,18 @@ The premium version which is activated by purchasing and activating the Minimali
 
 == Changelog ==
 
+= 1.4.40 =
+* Bug with hover video on mobile screens, demos and tutorial images in theme
+
+= 1.4.38 =
+* Update for Minimalio Admin pages to be compatible with WordPress theme regulations. Minor PHP updates. Update for Lightbox to work properly with lazy loaded images.
+
+= 1.4.36 =
+* Bold font weight added to all Google fonts. Minor PHP updates.
+
+= 1.4.36 =
+* New options for Lightbox and Gallery. Moving files to the Premium Plugin.
+
 = 1.4.3 =
 * Minor bug updates, adding Site Title Font Size Option
 

@@ -14,14 +14,6 @@ if ( get_theme_mod( 'minimalio_settings_container_type' ) ) {
 } else {
 	$minimalio_container = 'container';
 }
-
-// NY Customize the lightbox
-if ( get_theme_mod( 'minimalio_gallery_bg_color_settings' ) ) {
-	$minimalio_lightbox_bg = get_theme_mod( 'minimalio_gallery_bg_color_settings' );
-} else {
-	$minimalio_lightbox_bg = '#cecece'; // default lightbox background color
-}
-// End Customize the lightbox
 ?>
 
 <div class="wrapper" id="single-wrapper">
@@ -34,11 +26,7 @@ if ( get_theme_mod( 'minimalio_gallery_bg_color_settings' ) ) {
 
 				<?php get_template_part( 'templates/global-templates/checker/left-sidebar-check' ); ?>
 
-				<main class="site-main" id="main"
-				<?php
-				if ( $minimalio_lightbox_bg ) {
-					?>
-					data-bgcolor='<?php echo esc_attr( $minimalio_lightbox_bg );} ?>'>
+				<main class="site-main" id="main">
 
 					<?php
 					while ( have_posts() ) :

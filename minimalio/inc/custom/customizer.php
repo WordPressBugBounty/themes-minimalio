@@ -72,7 +72,7 @@ class Minimalio_Customizer {
 		// if we got fonts from Google API, then populate the $fonts_names array with them &
 		// array_merge with $safe_fonts
 		// else - return $safe_fonts
-		if ( ! empty( $fonts ) ) {
+		if ( ! empty( $fonts ) && isset( $fonts['items'] ) ) {
 			foreach ( $fonts['items'] as $font ) {
 				$fonts_names[] = esc_attr( $font['family'] );
 			}
@@ -125,13 +125,13 @@ class Minimalio_Customizer {
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 		$customizer->add_setting('minimalio_white-logo-settings', [
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		// Add control for our logo option
@@ -309,7 +309,7 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_color_background', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_image_background', [
@@ -378,7 +378,7 @@ class Minimalio_Customizer {
 			
 				'default'           => 'h2',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 				
 			
 		]);
@@ -387,7 +387,7 @@ class Minimalio_Customizer {
 			
 				'default'           => 'text-left',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			
 		]);
 
@@ -517,23 +517,6 @@ class Minimalio_Customizer {
 			'transport'         => 'refresh',
 		]);
 
-		$customizer->add_setting('minimalio_settings_google_font_size', [
-			'default'           => '',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		]);
-
-		$customizer->add_setting('minimalio_settings_google_font_size_tablet', [
-			'default'           => '',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_google_font_size_mobile', [
-			'default'           => '',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		]);
-
 		$customizer->add_setting(
 			'minimalio_typography_settings_google_font_wight',
 			[
@@ -552,48 +535,43 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_google_line_height', [
 			'default'           => '1.5',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_google_letter_spacing', [
 			'default'           => '0',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_font_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_google_link_decoration', [
 			'default'           => 'underline',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 
 		$customizer->add_setting('minimalio_settings_link_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 		$customizer->add_setting('minimalio_settings_hover_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
-
-		// 	$customizer->add_setting('minimalio_typography_description', [
-		// 	'default'           => '',
-		// 	'sanitize_callback' => 'sanitize_text_field',
-		// ]);
 
 		$customizer->add_setting('minimalio_settings_heading_sizes', [
 			'default'           => 'default',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		// Add controls for FONT settings
@@ -851,7 +829,7 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_logo_width', [
 			'default'           => '180',
 			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_fixed_heading', [
@@ -863,12 +841,12 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_header_background', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 		$customizer->add_setting('minimalio_settings_header_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 		$customizer->add_setting('minimalio_settings_header_color_hover', [
 			'default'           => '',
@@ -879,17 +857,17 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_fixed_header_background', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 		$customizer->add_setting('minimalio_settings_fixed_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 		$customizer->add_setting('minimalio_settings_fixed_color_hover', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_transparent', [
@@ -911,7 +889,7 @@ class Minimalio_Customizer {
 		]);
 
 		$customizer->add_setting('minimalio_settings_menu_google_font_size', [
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 			'default'           => '20',
 			'sanitize_callback' => 'absint',
 		]);
@@ -919,13 +897,13 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_menu_google_font_style', [
 			'default'           => 'normal',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting(
 			'minimalio_settings_menu_google_letter_spacing',
 			[
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 				'default'           => '0',
 				'sanitize_callback' => 'sanitize_text_field',
 			]
@@ -959,9 +937,9 @@ class Minimalio_Customizer {
 		);
 
 		$customizer->add_setting('minimalio_settings_submenu_font_size', [
-			'default'           => '16',
+			'default'           => '',
 			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		// Add controls for our settings, within a section
@@ -1524,13 +1502,13 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_footer_background', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting('minimalio_settings_footer_font_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_control(
@@ -1770,7 +1748,7 @@ class Minimalio_Customizer {
 		$customizer->add_setting('minimalio_settings_blog_hover_color', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 		]);
 
 		$customizer->add_setting(
@@ -1819,7 +1797,7 @@ class Minimalio_Customizer {
 			[
 				'default'           => 'no',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		]);
 
@@ -1827,7 +1805,7 @@ class Minimalio_Customizer {
 			[
 				'default'           => 'yes',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		]);
 
@@ -1835,7 +1813,7 @@ class Minimalio_Customizer {
 			
 				'default'           => 'h2',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		);
 
@@ -1843,7 +1821,7 @@ class Minimalio_Customizer {
 			
 				'default'           => 'justify-center',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			
 		]);
 
@@ -1851,7 +1829,7 @@ class Minimalio_Customizer {
 			[
 				'default'           => 'no',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		]);
 
@@ -1859,7 +1837,7 @@ class Minimalio_Customizer {
 			[
 				'default'           => 'no',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		]);
 
@@ -1867,7 +1845,7 @@ class Minimalio_Customizer {
 			[
 				'default'           => 'no',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		]);
 
@@ -1877,7 +1855,7 @@ class Minimalio_Customizer {
 				[
 					'default'           => 'no',
 					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
+					'transport'         => 'refresh',
 				],
 			]
 		);
@@ -1888,7 +1866,7 @@ class Minimalio_Customizer {
 				[
 					'default'           => 'yes',
 					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
+					'transport'         => 'refresh',
 				],
 			]
 		);
@@ -1899,7 +1877,7 @@ class Minimalio_Customizer {
 				[
 					'default'           => 'Latest',
 					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
+					'transport'         => 'refresh',
 				],
 			]
 		);
@@ -1910,7 +1888,7 @@ class Minimalio_Customizer {
 				[
 					'default'           => 'left',
 					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
+					'transport'         => 'refresh',
 				],
 			]
 		);
@@ -1931,7 +1909,7 @@ class Minimalio_Customizer {
 			[
 				'default'           => 'no',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
+				'transport'         => 'refresh',
 			],
 		]);
 
@@ -2559,202 +2537,6 @@ class Minimalio_Customizer {
 			]
 		);
 
-		$customizer->add_setting('minimalio_settings_portfolio_home', [
-			'default'           => 'no',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_columns', [
-			'default'           => 4,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_pagination', [
-			'default'           => 'no',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_type', [
-			'default'           => 'grid',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting(
-			'minimalio_settings_post_card_image_aspect_ratio',
-			[
-				'default'           => '1-1',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'refresh',
-			]
-		);
-
-		$customizer->add_setting('minimalio_settings_portfolio_style', [
-			'default'           => 'style_1',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_behaviour', [
-			'default'           => 'single',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_gap', [
-			'default'           => 'gap_1',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_hover_option', [
-			'default'           => 'color',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_hover_color', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-
-		$customizer->add_setting(
-			'minimalio_settings_portfolio_posts_per_page',
-			[
-				'default'           => 12,
-				'sanitize_callback' => 'absint',
-				'transport'         => 'refresh',
-			]
-		);
-
-		$customizer->add_setting('minimalio_settings_blog_all', [
-			'default'           => 'All',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_portfolio_slug', [
-			'default'           => 'portfolio',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_image', [
-			[
-				'default'           => 'no',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_title', [
-			[
-				'default'           => 'no',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_title_size', [
-			[
-				'default'           => 'h2',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_title_align', [
-			[
-				'default'           => 'justify-center',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
-		$customizer->add_setting(
-			'minimalio_settings_single_portfolio_latest_portfolio_title',
-			[
-				[
-					'default'           => 'yes',
-					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
-				],
-			]
-		);
-
-		$customizer->add_setting(
-			'minimalio_settings_single_portfolio_latest_portfolio_title_label',
-			[
-				[
-					'default'           => 'Latest',
-					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
-				],
-			]
-		);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_latest_portfolio_title_align', [
-			[
-				'default'           => 'left',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_latest_portfolio_title_size', [
-			'default'           => 'h2',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_latest_portfolio_number', [
-			'default'           => '4',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_share', [
-			[
-				'default'           => 'no',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
-		$customizer->add_setting(
-			'minimalio_settings_single_portfolio_metadata',
-			[
-				[
-					'default'           => 'no',
-					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
-				],
-			]
-		);
-
-		$customizer->add_setting(
-			'minimalio_settings_single_portfolio_navigation',
-			[
-				[
-					'default'           => 'no',
-					'sanitize_callback' => 'sanitize_text_field',
-					'transport'         => 'postMessage',
-				],
-			]
-		);
-
-		$customizer->add_setting('minimalio_settings_single_portfolio_latest', [
-			[
-				'default'           => 'no',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			],
-		]);
-
 		// PORTFOLIO CONTROLS
 
 		// Announce the portfolio filter by categories, available in Minimalio-Portfolio Plugin.
@@ -2800,65 +2582,6 @@ class Minimalio_Customizer {
 			'default'           => '768',
 			'sanitize_callback' => 'absint',
 			'transport'         => 'refresh',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_menu_width', [
-			'default'           => 'right-wrapper',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-
-		$customizer->add_setting('minimalio_settings_mobile_menu_icon_colour', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting(
-			'minimalio_settings_mobile_menu_icon_colour_fixed',
-			[
-				'default'           => '',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			]
-		);
-		$customizer->add_setting('minimalio_settings_mobile_logo', [
-			'default'           => 'nologo',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_top_background', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_close_colour', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_body_background', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_font_colour', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_font_size', [
-			'default'           => '20',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_font_style', [
-			'default'           => 'normal',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		]);
-		$customizer->add_setting('minimalio_settings_mobile_letter_spacing', [
-			'default'           => '0',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
 		]);
 
 		// Add controls for our settings, within a section
@@ -2906,303 +2629,6 @@ class Minimalio_Customizer {
 			'transport'         => 'refresh',
 		]);
 
-		$customizer->add_setting('minimalio_settings_social_media_style', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_facebook', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_instagram', [
-			'default'   => '',
-			'transport' => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_twitter', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_linkedin', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_pinterest', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_youtube', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting('minimalio_settings_social_media_vimeo', [
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'refresh',
-		]);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_applemusic",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_bandcamp",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_behance",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_bluesky",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_codepen",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_deviantart",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_dribbble",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_discord",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_etsy",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_flickr",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_github",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_goodreads",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_imdb",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_lastfm",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_mail",
-			[
-				"default" => "",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_mastodon",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_medium",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_patreon",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_pixelfed",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_reddit",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_rss",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_snapchat",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_soundcloud",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_spotify",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_tiktok",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_twitch",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_vk",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
-
-		$customizer->add_setting(
-			"minimalio_settings_social_media_x",
-			[
-				"default" => "",
-				"sanitize_callback" => "sanitize_text_field",
-				"transport" => "refresh",
-			]
-		);
 
 		// Controls
 		if ( !in_array( 'minimalio-portfolio/minimalio-portfolio.php', (array) get_option( 'active_plugins', array() ) ) ) {
@@ -3244,12 +2670,6 @@ class Minimalio_Customizer {
 
 		// Settings
 		$customizer->add_setting('minimalio_gallery_bg_color_settings', [
-			'default'           => '#cccccc',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-		]);
-
-		$customizer->add_setting('minimalio_ligtbox_icon_color_settings', [
 			'default'           => '#cccccc',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',

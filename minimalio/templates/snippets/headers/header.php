@@ -35,7 +35,7 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 		<!-- Your site title as branding in the menu -->
 		<?php if ( ! has_custom_logo() ) { ?>
 
-			<a class="inline-block mr-0 text-black header__brand whitespace-nowrap" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
+			<a class="inline-block mr-0 text-black header__brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
 			title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
 			<?php
