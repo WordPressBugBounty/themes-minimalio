@@ -32,27 +32,28 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 	?>
 	">
 	<div class="w-auto p-0 header__col-left">
-		<!-- Your site title as branding in the menu -->
-		<?php if ( ! has_custom_logo() ) { ?>
+	
+		<?php if ( ! has_custom_logo() ) : ?>
 
 			<a class="inline-block mr-0 text-black header__brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
 			title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
-			<?php
-		} elseif ( wp_is_mobile() && get_theme_mod( 'minimalio_mobile-logo-settings' ) ) {
-				
-			?>
+		<?php elseif ( has_custom_logo() && get_theme_mod( 'minimalio_mobile-logo-settings' ) ) : ?>
 
+			<span class="header__logo-desktop">
+				<?php the_custom_logo(); ?>
+			</span>
 			<a class="header__logo-link-mobile" href="<?php echo esc_url( home_url() ); ?>"
 			title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-			<img src="<?php echo wp_get_attachment_image_url( get_theme_mod( 'minimalio_mobile-logo-settings' ), 'full' ); ?>"
-				alt="mobile-logo" class="header__logo-mobile header__logo-mobile--<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+				<img src="<?php echo wp_get_attachment_image_url( get_theme_mod( 'minimalio_mobile-logo-settings' ), 'full' ); ?>"
+					alt="mobile-logo" class="header__logo-mobile header__logo-mobile--<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 			</a>
-				<?php
-		} else {
-			the_custom_logo();
-		}
-		?>
+
+		<?php else : ?>
+
+			<?php the_custom_logo(); ?>
+
+		<?php endif; ?>
 		<!-- end custom logo -->
 	</div><!-- end header col left -->
 	<div class="flex flex-wrap items-center w-auto p-0 header__col-right">

@@ -145,7 +145,7 @@ class Minimalio_Admin_Pages {
                         <li><strong><?php _e( 'Unlocks the Theme Settings', 'minimalio' ); ?></strong> - <?php _e( 'Get control over the Portfolio section, Social Icons, Lightbox and Mobile menu.', 'minimalio' ); ?></li>
                         <li><strong><?php _e( 'Premium Support', 'minimalio' ); ?></strong> - <?php _e( 'If you have any issues, just contact the support. ', 'minimalio' ); ?></li>
                         <li><strong><?php _e( '30 Days Money Back Guarantee', 'minimalio' ); ?></strong> - <?php _e( 'No questions asked, simply get your money back.', 'minimalio' ); ?></li>
-                        <li><strong><?php _e( 'Lifetime Updates', 'minimalio' ); ?></strong> - <?php _e( 'No subscriptions, just pay once and enjoy forever.', 'minimalio' ); ?></li>
+                        <li><strong><?php _e( 'Lifetime Updates Available', 'minimalio' ); ?></strong> - <?php _e( 'No subscriptions, just pay once and enjoy forever.', 'minimalio' ); ?></li>
                     </ul>
                     
                     <a href="https://minimalio.org/premium-plugin/" target="_blank" class="button minimalio-premium-button">

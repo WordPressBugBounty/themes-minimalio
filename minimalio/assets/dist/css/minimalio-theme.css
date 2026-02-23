@@ -2075,6 +2075,22 @@ HEADER
   text-decoration: none !important;
 }
 
+.header__col-left .header__logo-desktop {
+  display: block;
+}
+
+.header__col-left .header__logo-link-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header__col-left .header__logo-desktop {
+    display: none;
+  }
+  .header__col-left .header__logo-link-mobile {
+    display: block;
+  }
+}
 .header__brand {
   font-size: 1.333rem;
 }
@@ -2100,6 +2116,10 @@ HEADER
 
 .site .header__logo-link-mobile .header__logo-mobile {
   max-width: 70%;
+}
+
+.site .center-logo .header__logo-link-mobile .header__logo-mobile {
+  margin: 0 auto;
 }
 
 .menu-main-container .header__menu .nav__link {
@@ -2234,13 +2254,12 @@ HEADER
 
 .menu-item-has-children .header__submenu-wrap .menu-item {
   margin: 0.5rem 0;
-  width: -moz-max-content;
-  width: max-content;
+  width: auto;
 }
 .menu-item-has-children:hover .header__submenu-wrap, .menu-item-has-children:focus-within .header__submenu-wrap {
   opacity: 1;
   visibility: visible;
-  z-index: 10;
+  z-index: 100;
 }
 .menu-item-has-children:hover .menu-item__open-parent.current-menu-item .header__submenu-wrap, .menu-item-has-children:focus-within .menu-item__open-parent.current-menu-item .header__submenu-wrap {
   opacity: 0;

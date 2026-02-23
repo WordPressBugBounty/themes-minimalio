@@ -45,6 +45,9 @@ The premium version which is activated by purchasing and activating the Minimali
 
 == Changelog ==
 
+= 1.4.41 =
+* Mobile logo update, tiny bug with submenu
+
 = 1.4.40 =
 * Bug with hover video on mobile screens, demos and tutorial images in theme
 
