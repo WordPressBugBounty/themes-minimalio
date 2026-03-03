@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-23 11:44+0000\n"
+"POT-Creation-Date: 2026-03-03 13:58+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -315,7 +315,7 @@ msgstr ""
 msgid "No %s found "
 msgstr ""
 
-#: inc/custom/custom-post-type.php:262, inc/custom/customizer.php:771
+#: inc/custom/custom-post-type.php:262, inc/custom/customizer.php:792
 msgid "Default"
 msgstr ""
 
@@ -327,711 +327,715 @@ msgstr ""
 msgid "Leave empty for the default."
 msgstr ""
 
-#: inc/custom/customizer.php:143
+#: inc/custom/customizer.php:135
+msgid "Show tagline underneath the Title/Logo"
+msgstr ""
+
+#: inc/custom/customizer.php:164
 msgid "Mobile Logo"
 msgstr ""
 
-#: inc/custom/customizer.php:144
+#: inc/custom/customizer.php:165
 msgid "This logo is displaid on mobile view"
 msgstr ""
 
-#: inc/custom/customizer.php:159
+#: inc/custom/customizer.php:180
 msgid "White Logo"
 msgstr ""
 
-#: inc/custom/customizer.php:160
+#: inc/custom/customizer.php:181
 msgid "Another variation of the logo"
 msgstr ""
 
-#: inc/custom/customizer.php:179
+#: inc/custom/customizer.php:200
 msgid "Minimalio Options"
 msgstr ""
 
-#: inc/custom/customizer.php:185
+#: inc/custom/customizer.php:206
 msgid "Theme Layout Options"
 msgstr ""
 
-#: inc/custom/customizer.php:224, inc/custom/customizer.php:975
+#: inc/custom/customizer.php:245, inc/custom/customizer.php:996
 msgid "Container Width"
 msgstr ""
 
-#: inc/custom/customizer.php:225
+#: inc/custom/customizer.php:246
 msgid "Choose between Full width and Container"
 msgstr ""
 
-#: inc/custom/customizer.php:233, inc/custom/customizer.php:984, inc/custom/customizer.php:1531
+#: inc/custom/customizer.php:254, inc/custom/customizer.php:1005, inc/custom/customizer.php:1552
 msgid "Fixed width container"
 msgstr ""
 
-#: inc/custom/customizer.php:237, inc/custom/customizer.php:988, inc/custom/customizer.php:1535
+#: inc/custom/customizer.php:258, inc/custom/customizer.php:1009, inc/custom/customizer.php:1556
 msgid "Full width container"
 msgstr ""
 
-#: inc/custom/customizer.php:251
+#: inc/custom/customizer.php:272
 msgid "Container Width in px"
 msgstr ""
 
-#: inc/custom/customizer.php:252
+#: inc/custom/customizer.php:273
 msgid "Add container width for large screens"
 msgstr ""
 
-#: inc/custom/customizer.php:268
+#: inc/custom/customizer.php:289
 msgid "Enable Stable Scrollbar"
 msgstr ""
 
-#: inc/custom/customizer.php:272
+#: inc/custom/customizer.php:293
 msgid "If enabled, prevents layout shifts but introduces space on the right side"
 msgstr ""
 
-#: inc/custom/customizer.php:281
+#: inc/custom/customizer.php:302
 msgid "yes"
 msgstr ""
 
-#: inc/custom/customizer.php:282
+#: inc/custom/customizer.php:303
 msgid "no"
 msgstr ""
 
-#: inc/custom/customizer.php:293
+#: inc/custom/customizer.php:314
 msgid "Default 404 Page"
 msgstr ""
 
-#: inc/custom/customizer.php:304
+#: inc/custom/customizer.php:325
 msgid "Background"
 msgstr ""
 
-#: inc/custom/customizer.php:327
+#: inc/custom/customizer.php:348
 msgid "Website Color Background"
 msgstr ""
 
-#: inc/custom/customizer.php:355
+#: inc/custom/customizer.php:376
 msgid "Website Background Image"
 msgstr ""
 
-#: inc/custom/customizer.php:365
+#: inc/custom/customizer.php:386
 msgid "Page Options"
 msgstr ""
 
-#: inc/custom/customizer.php:409
+#: inc/custom/customizer.php:430
 msgid "Enable Page Title"
 msgstr ""
 
-#: inc/custom/customizer.php:416, inc/custom/customizer.php:1060, inc/custom/customizer.php:1356, inc/custom/customizer.php:1601, inc/custom/customizer.php:1624, inc/custom/customizer.php:1644, inc/custom/customizer.php:1972, inc/custom/customizer.php:2230, inc/custom/customizer.php:2251, inc/custom/customizer.php:2324, inc/custom/customizer.php:2345, inc/custom/customizer.php:2366, inc/custom/customizer.php:2388, inc/custom/customizer.php:2411, inc/custom/customizer.php:2516
+#: inc/custom/customizer.php:437, inc/custom/customizer.php:1081, inc/custom/customizer.php:1377, inc/custom/customizer.php:1622, inc/custom/customizer.php:1645, inc/custom/customizer.php:1665, inc/custom/customizer.php:1993, inc/custom/customizer.php:2251, inc/custom/customizer.php:2272, inc/custom/customizer.php:2345, inc/custom/customizer.php:2366, inc/custom/customizer.php:2387, inc/custom/customizer.php:2409, inc/custom/customizer.php:2432, inc/custom/customizer.php:2537
 msgid "Yes"
 msgstr ""
 
-#: inc/custom/customizer.php:417, inc/custom/customizer.php:1061, inc/custom/customizer.php:1082, inc/custom/customizer.php:1357, inc/custom/customizer.php:1602, inc/custom/customizer.php:1625, inc/custom/customizer.php:1645, inc/custom/customizer.php:1973, inc/custom/customizer.php:2013, inc/custom/customizer.php:2231, inc/custom/customizer.php:2252, inc/custom/customizer.php:2325, inc/custom/customizer.php:2346, inc/custom/customizer.php:2367, inc/custom/customizer.php:2389, inc/custom/customizer.php:2412, inc/custom/customizer.php:2517
+#: inc/custom/customizer.php:438, inc/custom/customizer.php:1082, inc/custom/customizer.php:1103, inc/custom/customizer.php:1378, inc/custom/customizer.php:1623, inc/custom/customizer.php:1646, inc/custom/customizer.php:1666, inc/custom/customizer.php:1994, inc/custom/customizer.php:2034, inc/custom/customizer.php:2252, inc/custom/customizer.php:2273, inc/custom/customizer.php:2346, inc/custom/customizer.php:2367, inc/custom/customizer.php:2388, inc/custom/customizer.php:2410, inc/custom/customizer.php:2433, inc/custom/customizer.php:2538
 msgid "No"
 msgstr ""
 
-#: inc/custom/customizer.php:428
+#: inc/custom/customizer.php:449
 msgid "Title Size (Pages, Archives)"
 msgstr ""
 
-#: inc/custom/customizer.php:432
+#: inc/custom/customizer.php:453
 msgid "Applies to page titles and all archive page titles. Only changes the size, the html tag stays H1 for SEO and accessibility reasons."
 msgstr ""
 
-#: inc/custom/customizer.php:442, inc/custom/customizer.php:2297, inc/custom/customizer.php:2473
+#: inc/custom/customizer.php:463, inc/custom/customizer.php:2318, inc/custom/customizer.php:2494
 msgid "h1"
 msgstr ""
 
-#: inc/custom/customizer.php:443, inc/custom/customizer.php:2298, inc/custom/customizer.php:2474
+#: inc/custom/customizer.php:464, inc/custom/customizer.php:2319, inc/custom/customizer.php:2495
 msgid "h2"
 msgstr ""
 
-#: inc/custom/customizer.php:444, inc/custom/customizer.php:2299, inc/custom/customizer.php:2475
+#: inc/custom/customizer.php:465, inc/custom/customizer.php:2320, inc/custom/customizer.php:2496
 msgid "h3"
 msgstr ""
 
-#: inc/custom/customizer.php:445, inc/custom/customizer.php:2300, inc/custom/customizer.php:2476
+#: inc/custom/customizer.php:466, inc/custom/customizer.php:2321, inc/custom/customizer.php:2497
 msgid "h4"
 msgstr ""
 
-#: inc/custom/customizer.php:446, inc/custom/customizer.php:2301, inc/custom/customizer.php:2477
+#: inc/custom/customizer.php:467, inc/custom/customizer.php:2322, inc/custom/customizer.php:2498
 msgid "h5"
 msgstr ""
 
-#: inc/custom/customizer.php:447, inc/custom/customizer.php:2302, inc/custom/customizer.php:2478
+#: inc/custom/customizer.php:468, inc/custom/customizer.php:2323, inc/custom/customizer.php:2499
 msgid "h6"
 msgstr ""
 
-#: inc/custom/customizer.php:458
+#: inc/custom/customizer.php:479
 msgid "Title Position (Pages, Archives)"
 msgstr ""
 
-#: inc/custom/customizer.php:468, inc/custom/customizer.php:1007, inc/custom/customizer.php:2274, inc/custom/customizer.php:2450
+#: inc/custom/customizer.php:489, inc/custom/customizer.php:1028, inc/custom/customizer.php:2295, inc/custom/customizer.php:2471
 msgid "Left"
 msgstr ""
 
-#: inc/custom/customizer.php:469, inc/custom/customizer.php:1008, inc/custom/customizer.php:1042, inc/custom/customizer.php:2275, inc/custom/customizer.php:2451
+#: inc/custom/customizer.php:490, inc/custom/customizer.php:1029, inc/custom/customizer.php:1063, inc/custom/customizer.php:2296, inc/custom/customizer.php:2472
 msgid "Center"
 msgstr ""
 
-#: inc/custom/customizer.php:470, inc/custom/customizer.php:1041, inc/custom/customizer.php:2276, inc/custom/customizer.php:2452
+#: inc/custom/customizer.php:491, inc/custom/customizer.php:1062, inc/custom/customizer.php:2297, inc/custom/customizer.php:2473
 msgid "Right"
 msgstr ""
 
-#: inc/custom/customizer.php:481, inc/custom/customizer.php:1931
+#: inc/custom/customizer.php:502, inc/custom/customizer.php:1952
 msgid "Sidebar Positioning"
 msgstr ""
 
-#: inc/custom/customizer.php:482
+#: inc/custom/customizer.php:503
 msgid "The sidebar that will be displayed on all pages"
 msgstr ""
 
-#: inc/custom/customizer.php:492, inc/custom/customizer.php:1943, inc/custom/customizer.php:2204
+#: inc/custom/customizer.php:513, inc/custom/customizer.php:1964, inc/custom/customizer.php:2225
 msgid "Right sidebar"
 msgstr ""
 
-#: inc/custom/customizer.php:493, inc/custom/customizer.php:1944, inc/custom/customizer.php:2205
+#: inc/custom/customizer.php:514, inc/custom/customizer.php:1965, inc/custom/customizer.php:2226
 msgid "Left sidebar"
 msgstr ""
 
-#: inc/custom/customizer.php:494, inc/custom/customizer.php:1945, inc/custom/customizer.php:2206
+#: inc/custom/customizer.php:515, inc/custom/customizer.php:1966, inc/custom/customizer.php:2227
 msgid "Left & Right sidebars"
 msgstr ""
 
-#: inc/custom/customizer.php:498, inc/custom/customizer.php:1949, inc/custom/customizer.php:2210
+#: inc/custom/customizer.php:519, inc/custom/customizer.php:1970, inc/custom/customizer.php:2231
 msgid "No sidebar"
 msgstr ""
 
-#: inc/custom/customizer.php:508
+#: inc/custom/customizer.php:529
 msgid "Typography"
 msgstr ""
 
-#: inc/custom/customizer.php:584
+#: inc/custom/customizer.php:605
 msgid "Main Google Font"
 msgstr ""
 
-#: inc/custom/customizer.php:601
+#: inc/custom/customizer.php:622
 msgid "Main Font Weight"
 msgstr ""
 
-#: inc/custom/customizer.php:619
+#: inc/custom/customizer.php:640
 msgid "Main Font Style"
 msgstr ""
 
-#: inc/custom/customizer.php:627, inc/custom/customizer.php:1316
+#: inc/custom/customizer.php:648, inc/custom/customizer.php:1337
 msgid "Regular"
 msgstr ""
 
-#: inc/custom/customizer.php:628, inc/custom/customizer.php:1317
+#: inc/custom/customizer.php:649, inc/custom/customizer.php:1338
 msgid "Italic"
 msgstr ""
 
-#: inc/custom/customizer.php:639
+#: inc/custom/customizer.php:660
 msgid "Main Font Color"
 msgstr ""
 
-#: inc/custom/customizer.php:661
+#: inc/custom/customizer.php:682
 msgid "Link Decoration"
 msgstr ""
 
-#: inc/custom/customizer.php:669, inc/custom/customizer.php:1255
+#: inc/custom/customizer.php:690, inc/custom/customizer.php:1276
 msgid "Underline"
 msgstr ""
 
-#: inc/custom/customizer.php:670, inc/custom/customizer.php:1256
+#: inc/custom/customizer.php:691, inc/custom/customizer.php:1277
 msgid "Line-through"
 msgstr ""
 
-#: inc/custom/customizer.php:674, inc/custom/customizer.php:1254
+#: inc/custom/customizer.php:695, inc/custom/customizer.php:1275
 msgid "No decoration"
 msgstr ""
 
-#: inc/custom/customizer.php:685
+#: inc/custom/customizer.php:706
 msgid "Link Color"
 msgstr ""
 
-#: inc/custom/customizer.php:707
+#: inc/custom/customizer.php:728
 msgid "Hover Link Color"
 msgstr ""
 
-#: inc/custom/customizer.php:729
+#: inc/custom/customizer.php:750
 msgid "Main Line Height"
 msgstr ""
 
-#: inc/custom/customizer.php:730
+#: inc/custom/customizer.php:751
 msgid "Usually between 1.3 to 1.8"
 msgstr ""
 
-#: inc/custom/customizer.php:746
+#: inc/custom/customizer.php:767
 msgid "Main Letter Spacing (px)"
 msgstr ""
 
-#: inc/custom/customizer.php:763
+#: inc/custom/customizer.php:784
 msgid "Heading Sizes Type Scale"
 msgstr ""
 
-#: inc/custom/customizer.php:772
+#: inc/custom/customizer.php:793
 msgid "Scale 1.25"
 msgstr ""
 
-#: inc/custom/customizer.php:776
+#: inc/custom/customizer.php:797
 msgid "Scale 1.333"
 msgstr ""
 
-#: inc/custom/customizer.php:780
+#: inc/custom/customizer.php:801
 msgid "Scale 1.414"
 msgstr ""
 
-#: inc/custom/customizer.php:784
+#: inc/custom/customizer.php:805
 msgid "Scale 1.5"
 msgstr ""
 
-#: inc/custom/customizer.php:799
+#: inc/custom/customizer.php:820
 msgid "Header"
 msgstr ""
 
-#: inc/custom/customizer.php:952
+#: inc/custom/customizer.php:973
 msgid "Select Header"
 msgstr ""
 
-#: inc/custom/customizer.php:957
+#: inc/custom/customizer.php:978
 msgid "Horizontal header"
 msgstr ""
 
-#: inc/custom/customizer.php:961
+#: inc/custom/customizer.php:982
 msgid "Vertical header"
 msgstr ""
 
-#: inc/custom/customizer.php:976, inc/custom/customizer.php:1523
+#: inc/custom/customizer.php:997, inc/custom/customizer.php:1544
 msgid "Choose between Full width and Container (The size you set up on Theme Layout Options)"
 msgstr ""
 
-#: inc/custom/customizer.php:1002
+#: inc/custom/customizer.php:1023
 msgid "Logo Position"
 msgstr ""
 
-#: inc/custom/customizer.php:1019
+#: inc/custom/customizer.php:1040
 msgid "Logo Width"
 msgstr ""
 
-#: inc/custom/customizer.php:1020
+#: inc/custom/customizer.php:1041
 msgid "For Logo images from Site Identity"
 msgstr ""
 
-#: inc/custom/customizer.php:1036
+#: inc/custom/customizer.php:1057
 msgid "Menu Position"
 msgstr ""
 
-#: inc/custom/customizer.php:1053
+#: inc/custom/customizer.php:1074
 msgid "Enable Fixed Header"
 msgstr ""
 
-#: inc/custom/customizer.php:1072
+#: inc/custom/customizer.php:1093
 msgid "Enable Transparent Header"
 msgstr ""
 
-#: inc/custom/customizer.php:1083
+#: inc/custom/customizer.php:1104
 msgid "Only Homepage"
 msgstr ""
 
-#: inc/custom/customizer.php:1084
+#: inc/custom/customizer.php:1105
 msgid "Only Single Portfolio"
 msgstr ""
 
-#: inc/custom/customizer.php:1088
+#: inc/custom/customizer.php:1109
 msgid "Everywhere"
 msgstr ""
 
-#: inc/custom/customizer.php:1099
+#: inc/custom/customizer.php:1120
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1124
+#: inc/custom/customizer.php:1145
 msgid "Header Menu Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1146
+#: inc/custom/customizer.php:1167
 msgid "Header Menu Hover/Active Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1171
+#: inc/custom/customizer.php:1192
 msgid "Fixed Header Background"
 msgstr ""
 
-#: inc/custom/customizer.php:1196
+#: inc/custom/customizer.php:1217
 msgid "Fixed Header Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1218
+#: inc/custom/customizer.php:1239
 msgid "Fixed Header Hover/Active Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1243
+#: inc/custom/customizer.php:1264
 msgid "Link Hover/Active Decoration"
 msgstr ""
 
-#: inc/custom/customizer.php:1270
+#: inc/custom/customizer.php:1291
 msgid "Link Hover/Active Font Weight"
 msgstr ""
 
-#: inc/custom/customizer.php:1281
+#: inc/custom/customizer.php:1302
 msgid "Light"
 msgstr ""
 
-#: inc/custom/customizer.php:1282
+#: inc/custom/customizer.php:1303
 msgid "Normal"
 msgstr ""
 
-#: inc/custom/customizer.php:1283
+#: inc/custom/customizer.php:1304
 msgid "Semibold"
 msgstr ""
 
-#: inc/custom/customizer.php:1284
+#: inc/custom/customizer.php:1305
 msgid "Bold"
 msgstr ""
 
-#: inc/custom/customizer.php:1295
+#: inc/custom/customizer.php:1316
 msgid "Menu Font Size (px)"
 msgstr ""
 
-#: inc/custom/customizer.php:1308
+#: inc/custom/customizer.php:1329
 msgid "Menu Font Style"
 msgstr ""
 
-#: inc/custom/customizer.php:1328
+#: inc/custom/customizer.php:1349
 msgid "Menu Letter Spacing (px)"
 msgstr ""
 
-#: inc/custom/customizer.php:1345
+#: inc/custom/customizer.php:1366
 msgid "Keep Submenu Opened On Parent Page"
 msgstr ""
 
-#: inc/custom/customizer.php:1367
+#: inc/custom/customizer.php:1388
 msgid "Submenu Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1389
+#: inc/custom/customizer.php:1410
 msgid "Submenu Color Hover"
 msgstr ""
 
-#: inc/custom/customizer.php:1411
+#: inc/custom/customizer.php:1432
 msgid "Submenu Background Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1436
+#: inc/custom/customizer.php:1457
 msgid "Submenu Font Size (px)"
 msgstr ""
 
-#: inc/custom/customizer.php:1451
+#: inc/custom/customizer.php:1472
 msgid "Footer"
 msgstr ""
 
-#: inc/custom/customizer.php:1519
+#: inc/custom/customizer.php:1540
 msgid "Footer Container Width"
 msgstr ""
 
-#: inc/custom/customizer.php:1549
+#: inc/custom/customizer.php:1570
 msgid "Footer Background"
 msgstr ""
 
-#: inc/custom/customizer.php:1571
+#: inc/custom/customizer.php:1592
 msgid "Footer Font Color"
 msgstr ""
 
-#: inc/custom/customizer.php:1593
+#: inc/custom/customizer.php:1614
 msgid "Enable Footer Widgets"
 msgstr ""
 
-#: inc/custom/customizer.php:1613
+#: inc/custom/customizer.php:1634
 msgid "Enable Copyright Section"
 msgstr ""
 
-#: inc/custom/customizer.php:1636
+#: inc/custom/customizer.php:1657
 msgid "Enable Copyright Menu"
 msgstr ""
 
-#: inc/custom/customizer.php:1656
+#: inc/custom/customizer.php:1677
 msgid "Choose Copyright Logo"
 msgstr ""
 
-#: inc/custom/customizer.php:1664
+#: inc/custom/customizer.php:1685
 msgid "General logo"
 msgstr ""
 
-#: inc/custom/customizer.php:1665
+#: inc/custom/customizer.php:1686
 msgid "White logo"
 msgstr ""
 
-#: inc/custom/customizer.php:1666
+#: inc/custom/customizer.php:1687
 msgid "Disable footer logo"
 msgstr ""
 
-#: inc/custom/customizer.php:1680
+#: inc/custom/customizer.php:1701
 msgid "Copyright Message"
 msgstr ""
 
-#: inc/custom/customizer.php:1693
+#: inc/custom/customizer.php:1714
 msgid "Designer/Developer"
 msgstr ""
 
-#: inc/custom/customizer.php:1703
+#: inc/custom/customizer.php:1724
 msgid "Blog Options"
 msgstr ""
 
-#: inc/custom/customizer.php:1932
+#: inc/custom/customizer.php:1953
 msgid "The sidebar that will be displayed on blog and archive pages"
 msgstr ""
 
-#: inc/custom/customizer.php:1960
+#: inc/custom/customizer.php:1981
 msgid "Enable Blog Filter By Categories"
 msgstr ""
 
-#: inc/custom/customizer.php:1984
+#: inc/custom/customizer.php:2005
 msgid "All Categories Filter Label"
 msgstr ""
 
-#: inc/custom/customizer.php:2000
+#: inc/custom/customizer.php:2021
 msgid "Load More Options"
 msgstr ""
 
-#: inc/custom/customizer.php:2007
+#: inc/custom/customizer.php:2028
 msgid "Load More Button"
 msgstr ""
 
-#: inc/custom/customizer.php:2008
+#: inc/custom/customizer.php:2029
 msgid "Load More on Scroll"
 msgstr ""
 
-#: inc/custom/customizer.php:2012
+#: inc/custom/customizer.php:2033
 msgid "Pagination"
 msgstr ""
 
-#: inc/custom/customizer.php:2024
+#: inc/custom/customizer.php:2045
 msgid "Posts Per Page/Load"
 msgstr ""
 
-#: inc/custom/customizer.php:2037
+#: inc/custom/customizer.php:2058
 msgid "Blog Archive Columns"
 msgstr ""
 
-#: inc/custom/customizer.php:2045
+#: inc/custom/customizer.php:2066
 msgid "1 column"
 msgstr ""
 
-#: inc/custom/customizer.php:2046
+#: inc/custom/customizer.php:2067
 msgid "2 columns"
 msgstr ""
 
-#: inc/custom/customizer.php:2047
+#: inc/custom/customizer.php:2068
 msgid "3 columns"
 msgstr ""
 
-#: inc/custom/customizer.php:2048
+#: inc/custom/customizer.php:2069
 msgid "4 columns"
 msgstr ""
 
-#: inc/custom/customizer.php:2049
+#: inc/custom/customizer.php:2070
 msgid "5 columns"
 msgstr ""
 
-#: inc/custom/customizer.php:2060
+#: inc/custom/customizer.php:2081
 msgid "Blog Display Type"
 msgstr ""
 
-#: inc/custom/customizer.php:2068
+#: inc/custom/customizer.php:2089
 msgid "Grid"
 msgstr ""
 
-#: inc/custom/customizer.php:2069
+#: inc/custom/customizer.php:2090
 msgid "Masonry"
 msgstr ""
 
-#: inc/custom/customizer.php:2080
+#: inc/custom/customizer.php:2101
 msgid "Blog Card Style"
 msgstr ""
 
-#: inc/custom/customizer.php:2088
+#: inc/custom/customizer.php:2109
 msgid "Style 1"
 msgstr ""
 
-#: inc/custom/customizer.php:2089
+#: inc/custom/customizer.php:2110
 msgid "Style 2"
 msgstr ""
 
-#: inc/custom/customizer.php:2090
+#: inc/custom/customizer.php:2111
 msgid "Style 3"
 msgstr ""
 
-#: inc/custom/customizer.php:2091
+#: inc/custom/customizer.php:2112
 msgid "Style 4"
 msgstr ""
 
-#: inc/custom/customizer.php:2092
+#: inc/custom/customizer.php:2113
 msgid "Style 5"
 msgstr ""
 
-#: inc/custom/customizer.php:2093
+#: inc/custom/customizer.php:2114
 msgid "All elements"
 msgstr ""
 
-#: inc/custom/customizer.php:2107
+#: inc/custom/customizer.php:2128
 msgid "Image Aspect Ratio"
 msgstr ""
 
-#: inc/custom/customizer.php:2116
+#: inc/custom/customizer.php:2137
 msgid "1/1"
 msgstr ""
 
-#: inc/custom/customizer.php:2117
+#: inc/custom/customizer.php:2138
 msgid "4/3"
 msgstr ""
 
-#: inc/custom/customizer.php:2118
+#: inc/custom/customizer.php:2139
 msgid "16/9"
 msgstr ""
 
-#: inc/custom/customizer.php:2119
+#: inc/custom/customizer.php:2140
 msgid "3/4"
 msgstr ""
 
-#: inc/custom/customizer.php:2120
+#: inc/custom/customizer.php:2141
 msgid "9/16"
 msgstr ""
 
-#: inc/custom/customizer.php:2131
+#: inc/custom/customizer.php:2152
 msgid "Blog Card Gap"
 msgstr ""
 
-#: inc/custom/customizer.php:2139
+#: inc/custom/customizer.php:2160
 msgid "No gap"
 msgstr ""
 
-#: inc/custom/customizer.php:2140
+#: inc/custom/customizer.php:2161
 msgid "Small gap"
 msgstr ""
 
-#: inc/custom/customizer.php:2141
+#: inc/custom/customizer.php:2162
 msgid "Big gap"
 msgstr ""
 
-#: inc/custom/customizer.php:2142
+#: inc/custom/customizer.php:2163
 msgid "Very big gap"
 msgstr ""
 
-#: inc/custom/customizer.php:2143
+#: inc/custom/customizer.php:2164
 msgid "Huge gap"
 msgstr ""
 
-#: inc/custom/customizer.php:2154
+#: inc/custom/customizer.php:2175
 msgid "Read More Button Label"
 msgstr ""
 
-#: inc/custom/customizer.php:2171
+#: inc/custom/customizer.php:2192
 msgid "Blog Hover Color"
 msgstr ""
 
-#: inc/custom/customizer.php:2193
+#: inc/custom/customizer.php:2214
 msgid "Single Post Sidebar Positioning"
 msgstr ""
 
-#: inc/custom/customizer.php:2221
+#: inc/custom/customizer.php:2242
 msgid "Enable Single Post Thumbnail Image"
 msgstr ""
 
-#: inc/custom/customizer.php:2242
+#: inc/custom/customizer.php:2263
 msgid "Enable Single Post Title"
 msgstr ""
 
-#: inc/custom/customizer.php:2264
+#: inc/custom/customizer.php:2285
 msgid "Title Position"
 msgstr ""
 
-#: inc/custom/customizer.php:2287
+#: inc/custom/customizer.php:2308
 msgid "Title Size"
 msgstr ""
 
-#: inc/custom/customizer.php:2313
+#: inc/custom/customizer.php:2334
 msgid "Enable Single Post Meta"
 msgstr ""
 
-#: inc/custom/customizer.php:2336
+#: inc/custom/customizer.php:2357
 msgid "Enable Single Post Share Buttons"
 msgstr ""
 
-#: inc/custom/customizer.php:2357
+#: inc/custom/customizer.php:2378
 msgid "Enable Single Post Author"
 msgstr ""
 
-#: inc/custom/customizer.php:2378
+#: inc/custom/customizer.php:2399
 msgid "Enable Single Post Latest Posts"
 msgstr ""
 
-#: inc/custom/customizer.php:2400
+#: inc/custom/customizer.php:2421
 msgid "Latest Posts Title"
 msgstr ""
 
-#: inc/custom/customizer.php:2424
+#: inc/custom/customizer.php:2445
 msgid "Latest Posts Title Label"
 msgstr ""
 
-#: inc/custom/customizer.php:2440
+#: inc/custom/customizer.php:2461
 msgid "Latest Posts Title Position"
 msgstr ""
 
-#: inc/custom/customizer.php:2463
+#: inc/custom/customizer.php:2484
 msgid "Latest Posts Title Size"
 msgstr ""
 
-#: inc/custom/customizer.php:2489
+#: inc/custom/customizer.php:2510
 msgid "Latest Posts Number"
 msgstr ""
 
-#: inc/custom/customizer.php:2505
+#: inc/custom/customizer.php:2526
 msgid "Enable Single Post Navigation"
 msgstr ""
 
-#: inc/custom/customizer.php:2525
+#: inc/custom/customizer.php:2546
 msgid "Portfolio Settings"
 msgstr ""
 
-#: inc/custom/customizer.php:2549
+#: inc/custom/customizer.php:2570
 msgid "Portfolio settings only available with premium plugin"
 msgstr ""
 
-#: inc/custom/customizer.php:2558, inc/custom/customizer.php:2601, inc/custom/customizer.php:2648, inc/custom/customizer.php:2695
+#: inc/custom/customizer.php:2579, inc/custom/customizer.php:2622, inc/custom/customizer.php:2669, inc/custom/customizer.php:2716
 msgid "Go Premium >>>"
 msgstr ""
 
-#: inc/custom/customizer.php:2562
+#: inc/custom/customizer.php:2583
 msgid "minimalio-portfolio-customizer.jpg"
 msgstr ""
 
-#: inc/custom/customizer.php:2575
+#: inc/custom/customizer.php:2596
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/custom/customizer.php:2594
+#: inc/custom/customizer.php:2615
 msgid "Mobile menu settings only available with premium plugin"
 msgstr ""
 
-#: inc/custom/customizer.php:2606
+#: inc/custom/customizer.php:2627
 msgid "minimalio-mobile-customizer.jpg"
 msgstr ""
 
-#: inc/custom/customizer.php:2620
+#: inc/custom/customizer.php:2641
 msgid "Social Media"
 msgstr ""
 
-#: inc/custom/customizer.php:2641
+#: inc/custom/customizer.php:2662
 msgid "Social media settings only available with premium plugin"
 msgstr ""
 
-#: inc/custom/customizer.php:2653
+#: inc/custom/customizer.php:2674
 msgid "minimalio-social-customizer.jpg"
 msgstr ""
 
-#: inc/custom/customizer.php:2666
+#: inc/custom/customizer.php:2687
 msgid "Ligtbox"
 msgstr ""
 
-#: inc/custom/customizer.php:2688
+#: inc/custom/customizer.php:2709
 msgid "Ligtbox settings only available with premium plugin"
 msgstr ""
 
-#: inc/custom/customizer.php:2700
+#: inc/custom/customizer.php:2721
 msgid "minimalio-lightbox-customizer.jpg"
 msgstr ""
 
@@ -1043,7 +1047,7 @@ msgstr ""
 msgid "Demos"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:64, inc/custom/minimalio-admin-pages.php:65, inc/custom/minimalio-admin-pages.php:123, inc/custom/minimalio-admin-pages.php:172, inc/custom/minimalio-admin/tutorials.php:265
+#: inc/custom/minimalio-admin-pages.php:64, inc/custom/minimalio-admin-pages.php:65, inc/custom/minimalio-admin-pages.php:123, inc/custom/minimalio-admin-pages.php:171, inc/custom/minimalio-admin/tutorials.php:265
 msgid "Tutorials"
 msgstr ""
 
@@ -1135,51 +1139,43 @@ msgstr ""
 msgid "No questions asked, simply get your money back."
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:148
-msgid "Lifetime Updates Available"
+#: inc/custom/minimalio-admin-pages.php:151, inc/custom/minimalio-admin/import-demos.php:233
+msgid "Purchase Premium Plugin ($39)"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:148
-msgid "No subscriptions, just pay once and enjoy forever."
-msgstr ""
-
-#: inc/custom/minimalio-admin-pages.php:152, inc/custom/minimalio-admin/import-demos.php:233
-msgid "Purchase Premium Plugin ($49)"
-msgstr ""
-
-#: inc/custom/minimalio-admin-pages.php:156, inc/custom/minimalio-admin/import-demos.php:236
+#: inc/custom/minimalio-admin-pages.php:155, inc/custom/minimalio-admin/import-demos.php:236
 msgid "How to Install Tutorial"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:164
+#: inc/custom/minimalio-admin-pages.php:163
 msgid "Import Demos"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:165
+#: inc/custom/minimalio-admin-pages.php:164
 msgid "Check out the Minimalio Demos, and with the Premium Plugin, you can import them by simple two clicks."
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:167
+#: inc/custom/minimalio-admin-pages.php:166
 msgid "Browse Demos"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:173
+#: inc/custom/minimalio-admin-pages.php:172
 msgid "Minimalio isn't just a theme, it's a platform for people with zero WordPress and coding skills to create their website."
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:175
+#: inc/custom/minimalio-admin-pages.php:174
 msgid "View Tutorials"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:180
+#: inc/custom/minimalio-admin-pages.php:179
 msgid "Support"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:181
+#: inc/custom/minimalio-admin-pages.php:180
 msgid "The customers of the Premium Plugin receive premium support. After the purchase, you will get the contact email."
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:183
+#: inc/custom/minimalio-admin-pages.php:182
 msgid "Support page"
 msgstr ""
 

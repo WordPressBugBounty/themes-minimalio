@@ -2122,6 +2122,10 @@ HEADER
   margin: 0 auto;
 }
 
+.header__col-left .header__tagline {
+  margin-bottom: 0;
+}
+
 .menu-main-container .header__menu .nav__link {
   display: block;
 }
@@ -2172,7 +2176,16 @@ HEADER
   margin: 1rem 0 0 0;
 }
 
+.header .center-logo .header__col-left {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 @media screen and (min-width: 768px) {
+  .header .center-logo .header__col-left {
+    flex-direction: column;
+    align-items: center;
+  }
   .menu-main-container .centered {
     display: flex;
     justify-content: flex-end;
@@ -3107,6 +3120,28 @@ PORTFOLIO POST CARDS
 }
 .masonry .hover-video .post-card__overlay {
   display: none;
+}
+
+.grayscale-color .post-card__overlay {
+  display: none;
+}
+.grayscale-color .post-card__image {
+  filter: grayscale(1);
+  transition: filter 0.3s ease-in-out;
+}
+.grayscale-color:hover .post-card__image {
+  filter: grayscale(0);
+}
+
+.color-grayscale .post-card__overlay {
+  display: none;
+}
+.color-grayscale .post-card__image {
+  filter: grayscale(0);
+  transition: filter 0.3s ease-in-out;
+}
+.color-grayscale:hover .post-card__image {
+  filter: grayscale(1);
 }
 
 .portfolio-post-type .post-card-3:hover .post-card__body {

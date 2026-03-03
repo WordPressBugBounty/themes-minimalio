@@ -118,6 +118,27 @@ class Minimalio_Customizer {
 			]
 		);
 
+		// Add setting for show tagline
+		$customizer->add_setting(
+			'minimalio_show_tagline',
+			[
+				'default'           => false,
+				'sanitize_callback' => 'rest_sanitize_boolean',
+				'transport'         => 'refresh',
+			]
+		);
+
+		// Add control for show tagline
+		$customizer->add_control(
+			'minimalio_show_tagline',
+			[
+				'label'    => esc_html__( 'Show tagline underneath the Title/Logo', 'minimalio' ),
+				'section'  => 'title_tagline',
+				'type'     => 'checkbox',
+				'priority' => 10,
+			]
+		);
+
 		/**
 		 * Custom logo for mobile on title section
 		 */

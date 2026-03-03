@@ -230,7 +230,7 @@ function minimalio_demos_page() {
                 <h2><?php _e( 'Import Available Only with the Premium Plugin', 'minimalio' ); ?></h2>
                 <p><?php _e( 'You can preview the demos, but importing them is only available with the Premium Plugin.', 'minimalio' ); ?></p>
                 <a href="https://minimalio.org/premium-plugin/" target="_blank" class="button minimalio-premium-button">
-                    <?php _e( 'Purchase Premium Plugin ($49)', 'minimalio' ); ?>
+                    <?php _e( 'Purchase Premium Plugin ($39)', 'minimalio' ); ?>
                 </a>
                 <a href="<?php echo admin_url( 'admin.php?page=minimalio-tutorials#install' ); ?>" class="button button-primary">
                     <?php _e( 'How to Install Tutorial', 'minimalio' ); ?>

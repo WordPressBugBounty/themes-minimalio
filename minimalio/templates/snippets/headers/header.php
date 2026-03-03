@@ -55,6 +55,9 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 
 		<?php endif; ?>
 		<!-- end custom logo -->
+		<?php if ( get_theme_mod( 'minimalio_show_tagline', false ) ) : ?>
+			<p class="header__tagline"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
+		<?php endif; ?>
 	</div><!-- end header col left -->
 	<div class="flex flex-wrap items-center w-auto p-0 header__col-right">
 		<!-- The WordPress Main Menu goes here -->
