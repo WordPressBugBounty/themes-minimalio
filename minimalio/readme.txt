@@ -45,6 +45,9 @@ The premium version which is activated by purchasing and activating the Minimali
 
 == Changelog ==
 
+= 1.4.43 =
+* Price update, minor mobile menu bug
+
 = 1.4.42 =
 * Possibility of showing tagline in header, new portfolio hover options
 

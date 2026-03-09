@@ -35,10 +35,19 @@ jQuery(document).ready(function ($) {
     $("#page-content").css("margin-top", $header_wrapper);
   }
 
-  // close mobile menu when menu item clicked
-  $(".mobile-menu__link").click(function () {
-    $("#mobilemenu").toggleClass("is-active");
-    $(".header__mobile-button").toggleClass("is-active");
+  // close mobile menu when menu item clicked, or open submenu if link has no real href
+  $(".mobile-menu__link").click(function (e) {
+    var href = $(this).attr("href");
+    var hasRealHref = href && href !== "#" && href !== "";
+
+    if (hasRealHref) {
+      $("#mobilemenu").toggleClass("is-active");
+      $(".header__mobile-button").toggleClass("is-active");
+    } else {
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).closest(".menu-item-has-children").toggleClass("mobile-menu__item--active");
+    }
   });
 
   // mobile menu logo wrapper height

@@ -128,7 +128,7 @@ class Minimalio_Admin_Pages {
                         
                     </div>
                     <div class="minimalio-column-video">
-                        <div class="muse-video-player" data-title="0" data-video="L4hM7LG" data-logo="https://minimalio.sirv.com/Images/Minimalio-logo-muse.png" data-subtitles="auto" data-width="100%"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+                        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1171344341?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Welcome to Minimalio"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
                 </div>
             </div>
@@ -145,10 +145,15 @@ class Minimalio_Admin_Pages {
                         <li><strong><?php _e( 'Unlocks the Theme Settings', 'minimalio' ); ?></strong> - <?php _e( 'Get control over the Portfolio section, Social Icons, Lightbox and Mobile menu.', 'minimalio' ); ?></li>
                         <li><strong><?php _e( 'Premium Support', 'minimalio' ); ?></strong> - <?php _e( 'If you have any issues, just contact the support. ', 'minimalio' ); ?></li>
                         <li><strong><?php _e( '30 Days Money Back Guarantee', 'minimalio' ); ?></strong> - <?php _e( 'No questions asked, simply get your money back.', 'minimalio' ); ?></li>
+                        <li><strong><?php _e( '7-Day Trial Available', 'minimalio' ); ?></strong> - <?php _e( 'No credit card required, just test it out.', 'minimalio' ); ?></li>
                     </ul>
+
+                     <a href="https://checkout.freemius.com/plugin/17030/plan/28380/?trial=free" target="_blank" class="button minimalio-premium-button">
+                        <?php _e( '7-Day Trial ', 'minimalio' ); ?>
+                    </a>
                     
-                    <a href="https://minimalio.org/premium-plugin/" target="_blank" class="button minimalio-premium-button">
-                        <?php _e( 'Purchase Premium Plugin ($39)', 'minimalio' ); ?>
+                    <a href="https://minimalio.org/premium-plugin/" target="_blank" class="button button-primary">
+                        <?php _e( 'Purchase Premium Plugin ($29)', 'minimalio' ); ?>
                     </a>
 
                     <a href="<?php echo admin_url( 'admin.php?page=minimalio-tutorials#install' ); ?>" class="button button-primary">

@@ -138,6 +138,7 @@ if ( isset( $parameters['header_color'] ) && $parameters['header_color'] ) :
 	$css .= sprintf( '.header .socials__icon {color: %s } ', esc_attr( $parameters['header_color'] ) );
 	$css .= sprintf( '.header .socials__icon {fill: %s } ', esc_attr( $parameters['header_color'] ) );
 	$css .= sprintf( '.header .header__brand {color: %s } ', esc_attr( $parameters['header_color'] ) );
+	$css .= sprintf( '.header .header__tagline {color: %s } ', esc_attr( $parameters['header_color'] ) );
 endif;
 
 if ( isset( $parameters['header_color_hover'] ) && $parameters['header_color_hover'] ) :
