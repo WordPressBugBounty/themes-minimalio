@@ -145,10 +145,10 @@ class Minimalio_Admin_Pages {
                         <li><strong><?php _e( 'Unlocks the Theme Settings', 'minimalio' ); ?></strong> - <?php _e( 'Get control over the Portfolio section, Social Icons, Lightbox and Mobile menu.', 'minimalio' ); ?></li>
                         <li><strong><?php _e( 'Premium Support', 'minimalio' ); ?></strong> - <?php _e( 'If you have any issues, just contact the support. ', 'minimalio' ); ?></li>
                         <li><strong><?php _e( '30 Days Money Back Guarantee', 'minimalio' ); ?></strong> - <?php _e( 'No questions asked, simply get your money back.', 'minimalio' ); ?></li>
-                        <li><strong><?php _e( '7-Day Trial Available', 'minimalio' ); ?></strong> - <?php _e( 'No credit card required, just test it out.', 'minimalio' ); ?></li>
+                        <li><strong><?php _e( '7-Day Trial Available', 'minimalio' ); ?></strong> - <?php _e( 'Just test it out, import a demo and see if you like it.', 'minimalio' ); ?></li>
                     </ul>
 
-                     <a href="https://checkout.freemius.com/plugin/17030/plan/28380/?trial=free" target="_blank" class="button minimalio-premium-button">
+                     <a href="https://checkout.freemius.com/plugin/17030/plan/28380/?trial=paid" target="_blank" class="button minimalio-premium-button">
                         <?php _e( '7-Day Trial ', 'minimalio' ); ?>
                     </a>
                     

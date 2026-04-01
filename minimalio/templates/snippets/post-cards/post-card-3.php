@@ -27,7 +27,7 @@
 
 						<?php if ( $card_title ) : ?>
 							<<?php echo esc_attr( $heading_type ); ?> class="post-card__heading">
-								<?php echo esc_html( $card_title ); ?>
+								<?php echo wp_kses_post( $card_title ); ?>
 							</<?php echo esc_attr( $heading_type ); ?>>
 						<?php endif; ?>
 
@@ -89,7 +89,7 @@
 					<div class="absolute top-0 z-10 flex flex-col justify-center w-full h-full p-2 m-0 text-center transition-opacity duration-300 opacity-0 post-card__body md:pt-4 md:pl-4 md:pr-4 md:pb-8">
 						<?php if ( $card_title ) : ?>
 							<<?php echo esc_attr( $heading_type ); ?> class="post-card__heading">
-								<?php echo esc_html( $card_title ); ?>
+								<?php echo wp_kses_post( $card_title ); ?>
 							</<?php echo esc_attr( $heading_type ); ?>>
 						<?php endif; ?>
 
@@ -134,7 +134,7 @@
 		data-card-id="<?php echo esc_attr( $id ); ?>">
 		<?php if ( $link_url ) : ?>
 			<a class="absolute top-0 bottom-0 left-0 right-0 z-20 no-underline opacity-0 post-card__link" href="<?php echo esc_url( $link_url ); ?>">
-				<?php echo esc_html( $card_title ); ?>
+				<?php echo wp_kses_post( $card_title ); ?>
 			</a>
 		<?php endif; ?>
 
@@ -159,7 +159,7 @@
 
 			<?php if ( $card_title ) : ?>
 				<<?php echo esc_attr( $heading_type ); ?> class="post-card__heading">
-					<?php echo esc_html( $card_title ); ?>
+					<?php echo wp_kses_post( $card_title ); ?>
 				</<?php echo esc_attr( $heading_type ); ?>>
 			<?php endif; ?>
 

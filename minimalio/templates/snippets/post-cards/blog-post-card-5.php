@@ -5,7 +5,7 @@
 	<?php if ( $link_url ) : ?>
 		<a class="absolute top-0 bottom-0 left-0 right-0 z-20 no-underline opacity-0 post-card__link"
 			href="<?php echo esc_url( $link_url ); ?>">
-			<?php echo esc_html( $card_title ); ?>
+			<?php echo wp_kses_post( $card_title ); ?>
 		</a>
 	<?php endif; ?>
 
@@ -29,7 +29,7 @@
 
 		<?php if ( $card_title ) : ?>
 			<h1 class="py-4 m-0 break-words post-card__heading">
-				<?php echo esc_html( $card_title ); ?>
+				<?php echo wp_kses_post( $card_title ); ?>
 			</h1>
 		<?php endif; ?>
 
@@ -42,7 +42,7 @@
 
 		<?php if ( $minimalio_button_label ) : ?>
 			<div class="mt-4 post-card__button lg:mb-16">
-				<a class="post-card__btn" href="<?php echo esc_url( $link_url ); ?>" aria-label="<?php echo esc_html( $card_title ); ?>">
+				<a class="post-card__btn" href="<?php echo esc_url( $link_url ); ?>" aria-label="<?php echo wp_kses_post( $card_title ); ?>">
 					<?php echo $minimalio_button_label; ?>
 				</a>
 			</div>

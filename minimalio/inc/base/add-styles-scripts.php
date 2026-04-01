@@ -51,9 +51,8 @@ if ( ! function_exists( 'minimalio_scripts' ) ) {
 		// Add the theme site URL to available Jquery arguments in case this is needed (e.g. WP AJAX call URLS)
 		$theme = [ 'siteurl' => get_option( 'siteurl' ) ];
 		wp_localize_script( 'minimalio_theme', 'minimalio_theme', $theme );
-		wp_localize_script( 'minimalio_theme', 'wpAjaxLoad', [ 
+		wp_localize_script( 'minimalio_theme', 'wpAjaxLoad', [
 			'ajax_loadUrl' => admin_url( 'admin-ajax.php' ),
-			'nonce' => wp_create_nonce( 'minimalio_ajax_nonce' )
 		] );
 	}
 } // endif function_exists( 'minimalio_scripts' ).

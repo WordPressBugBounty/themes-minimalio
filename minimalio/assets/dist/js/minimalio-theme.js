@@ -890,7 +890,6 @@ jQuery(document).ready(function($){
               'category': target,
               'exclude': current_ids,
               'post_type': post_type,
-              'nonce': wpAjaxLoad.nonce
             };
 
             $.ajax({
@@ -986,7 +985,6 @@ jQuery(document).ready(function($){
             'category': target,
             'exclude': current_ids,
             'post_type': post_type,
-            'nonce': wpAjaxLoad.nonce
           };
 
           $.ajax({
@@ -1145,7 +1143,6 @@ jQuery(document).ready(function ($) {
       'category': target,
       'load': 0,
       'post_type': post_type,
-      'nonce': wpAjaxLoad.nonce
     };
 
 

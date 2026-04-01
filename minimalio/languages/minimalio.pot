@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-09 11:03+0000\n"
+"POT-Creation-Date: 2026-04-01 10:26+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -80,19 +80,15 @@ msgstr ""
 msgid "Search &hellip;"
 msgstr ""
 
-#: inc/base/ajax-filter.php:14, inc/base/ajax-filter.php:151
-msgid "Security check failed"
-msgstr ""
-
-#: inc/base/ajax-filter.php:28, inc/base/ajax-filter.php:166
+#: inc/base/ajax-filter.php:23, inc/base/ajax-filter.php:156
 msgid "Invalid post type"
 msgstr ""
 
-#: inc/base/ajax-filter.php:33, inc/base/ajax-filter.php:171
+#: inc/base/ajax-filter.php:28, inc/base/ajax-filter.php:161
 msgid "Invalid card template"
 msgstr ""
 
-#: inc/base/ajax-filter.php:133, templates/blocks/posts-ajax/posts-ajax.php:283
+#: inc/base/ajax-filter.php:128, templates/blocks/posts-ajax/posts-ajax.php:283
 msgid "Load More"
 msgstr ""
 
@@ -1043,7 +1039,7 @@ msgstr ""
 msgid "Minimalio"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:54, inc/custom/minimalio-admin-pages.php:55, inc/custom/minimalio-admin-pages.php:120, inc/custom/minimalio-admin/import-demos.php:226
+#: inc/custom/minimalio-admin-pages.php:54, inc/custom/minimalio-admin-pages.php:55, inc/custom/minimalio-admin-pages.php:120, inc/custom/minimalio-admin/import-demos.php:234
 msgid "Demos"
 msgstr ""
 
@@ -1144,18 +1140,18 @@ msgid "7-Day Trial Available"
 msgstr ""
 
 #: inc/custom/minimalio-admin-pages.php:148
-msgid "No credit card required, just test it out."
+msgid "Just test it out, import a demo and see if you like it."
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:152, inc/custom/minimalio-admin/import-demos.php:233
+#: inc/custom/minimalio-admin-pages.php:152, inc/custom/minimalio-admin/import-demos.php:241
 msgid "7-Day Trial "
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:156, inc/custom/minimalio-admin/import-demos.php:236
+#: inc/custom/minimalio-admin-pages.php:156, inc/custom/minimalio-admin/import-demos.php:244
 msgid "Purchase Premium Plugin ($29)"
 msgstr ""
 
-#: inc/custom/minimalio-admin-pages.php:160, inc/custom/minimalio-admin/import-demos.php:239
+#: inc/custom/minimalio-admin-pages.php:160, inc/custom/minimalio-admin/import-demos.php:247
 msgid "How to Install Tutorial"
 msgstr ""
 
@@ -1271,63 +1267,63 @@ msgstr ""
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:230
+#: inc/custom/minimalio-admin/import-demos.php:238
 msgid "Import Available Only with the Premium Plugin"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:231
+#: inc/custom/minimalio-admin/import-demos.php:239
 msgid "You can preview the demos, but importing them is only available with the Premium Plugin."
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:245
+#: inc/custom/minimalio-admin/import-demos.php:253
 msgid "How to Import? Content First, Then Settings."
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:246
+#: inc/custom/minimalio-admin/import-demos.php:254
 msgid "Importing demos couldn't be easier. But please, check out the Import Demo Tutorial, to find out how it works, what it imports and how to use the demo content."
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:249
+#: inc/custom/minimalio-admin/import-demos.php:257
 msgid "Import Demo Tutorial"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:252
+#: inc/custom/minimalio-admin/import-demos.php:260
 msgid "View Demos on Minimalio Website"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:270
+#: inc/custom/minimalio-admin/import-demos.php:278
 msgid "Unknown Demo"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:298, inc/custom/minimalio-admin/import-demos.php:301
+#: inc/custom/minimalio-admin/import-demos.php:306, inc/custom/minimalio-admin/import-demos.php:309
 msgid "Requires Minimalio Portfolio Plugin"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:299, inc/custom/minimalio-admin/import-demos.php:287
+#: inc/custom/minimalio-admin/import-demos.php:307, inc/custom/minimalio-admin/import-demos.php:295
 msgid "Import Content"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:302, inc/custom/minimalio-admin/import-demos.php:294
+#: inc/custom/minimalio-admin/import-demos.php:310, inc/custom/minimalio-admin/import-demos.php:302
 msgid "Import Settings"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:307
+#: inc/custom/minimalio-admin/import-demos.php:315
 msgid "Preview"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:262
+#: inc/custom/minimalio-admin/import-demos.php:270
 msgid "Sorry, Minimalio is having trouble finding the demos, make sure you are connected to the internet or you can try to refresh demos at the bottom of this page. If the problem persists, please contact the support. Thank you."
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:319
+#: inc/custom/minimalio-admin/import-demos.php:327
 msgid "View all demos at Minimalio website"
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:320
+#: inc/custom/minimalio-admin/import-demos.php:328
 msgid "There might be some new ones..."
 msgstr ""
 
-#: inc/custom/minimalio-admin/import-demos.php:322
+#: inc/custom/minimalio-admin/import-demos.php:330
 msgid "All Demos"
 msgstr ""
 

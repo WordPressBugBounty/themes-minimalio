@@ -9,11 +9,6 @@
 defined( 'ABSPATH' ) || exit;
 
 function minimalio_filter_ajax() {
-	// Verify nonce
-	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'minimalio_ajax_nonce' ) ) {
-		wp_die( __( 'Security check failed', 'minimalio' ), 403 );
-	}
-
 	// Sanitize and validate inputs
 	$minimalio_category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : 'all';
 	$card = isset( $_POST['card'] ) ? sanitize_file_name( $_POST['card'] ) : '';
@@ -120,7 +115,7 @@ function minimalio_filter_ajax() {
 
 		</div>
 
-		<?php if ( $minimalio_display !== 'no' && $minimalio_display !== 'load_scroll' ) : ?>
+		<?php if ( $minimalio_display !== 'no' && $minimalio_display !== 'load_scroll' && $minimalio_nr_posts !== -1 && $count_posts > $minimalio_nr_posts ) : ?>
 
 			<div class="w-full posts__button">
 				<a class="wp-block-button__link wp-element-button posts__button-link
@@ -146,11 +141,6 @@ add_action( 'wp_ajax_nopriv_filter', 'minimalio_filter_ajax' );
 
 // Load more ajax
 function minimalio_load_ajax() {
-	// Verify nonce
-	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'minimalio_ajax_nonce' ) ) {
-		wp_die( __( 'Security check failed', 'minimalio' ), 403 );
-	}
-
 	// Sanitize and validate inputs
 	$minimalio_category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : 'all';
 	$card = isset( $_POST['card'] ) ? sanitize_file_name( $_POST['card'] ) : '';

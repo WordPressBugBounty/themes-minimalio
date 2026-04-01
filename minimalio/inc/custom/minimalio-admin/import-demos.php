@@ -177,6 +177,14 @@ function minimalio_get_hardcoded_demos() {
                 'content_url' => '',
                 'settings_url' => ''
             ),
+             array(
+                'id' => 'archie',
+                'name' => 'Archie',
+                'image' => $demos_image_path . 'archie-minimalio.webp',
+                'preview_url' => 'https://archie.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
         ),
         'last_updated' => '2025-06-26'
     );
@@ -229,7 +237,7 @@ function minimalio_demos_page() {
             <div class="minimalio-admin-card">
                 <h2><?php _e( 'Import Available Only with the Premium Plugin', 'minimalio' ); ?></h2>
                 <p><?php _e( 'You can preview the demos, but importing them is only available with the Premium Plugin.', 'minimalio' ); ?></p>
-                  <a href="https://checkout.freemius.com/plugin/17030/plan/28380/?trial=free" target="_blank" class="button minimalio-premium-button">
+                  <a href="https://checkout.freemius.com/plugin/17030/plan/28380/?trial=paid" target="_blank" class="button minimalio-premium-button">
                         <?php _e( '7-Day Trial ', 'minimalio' ); ?>
                     </a>
                 <a href="https://minimalio.org/premium-plugin/" target="_blank" class="button button-primary">
