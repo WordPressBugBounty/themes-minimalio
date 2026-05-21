@@ -185,6 +185,14 @@ function minimalio_get_hardcoded_demos() {
                 'content_url' => '',
                 'settings_url' => ''
             ),
+             array(
+                'id' => 'rosa',
+                'name' => 'Rosa',
+                'image' => $demos_image_path . 'rosa-minimalio.webp',
+                'preview_url' => 'https://rosa.minimalio.org',
+                'content_url' => '',
+                'settings_url' => ''
+            ),
         ),
         'last_updated' => '2025-06-26'
     );

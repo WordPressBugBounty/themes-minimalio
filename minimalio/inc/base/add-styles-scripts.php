@@ -64,7 +64,9 @@ add_action( 'wp_enqueue_scripts', 'minimalio_scripts' );
  */
 function minimalio_add_editor_styles_sub_dir() {
 	add_theme_support( 'editor-styles' ); // if you don't add this line, your stylesheet won't be added
-	add_editor_style( trailingslashit( get_template_directory_uri() ) . 'assets/dist/css/minimalio-editor-style.css' );
+	$file_path = get_template_directory() . '/assets/dist/css/minimalio-editor-style.css';
+	$ver       = file_exists( $file_path ) ? filemtime( $file_path ) : MINIMALIO_VERSION;
+	add_editor_style( trailingslashit( get_template_directory_uri() ) . 'assets/dist/css/minimalio-editor-style.css?ver=' . $ver );
 }
 add_action( 'after_setup_theme', 'minimalio_add_editor_styles_sub_dir' );
 

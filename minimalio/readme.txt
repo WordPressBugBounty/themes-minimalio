@@ -45,6 +45,10 @@ The premium version which is activated by purchasing and activating the Minimali
 
 == Changelog ==
 
+= 1.4.46 =
+* Issue issue with Minimalio Gallery block in the Gutenberg editor. 
+* New Rosa demo.
+
 = 1.4.44 =
 * Removed unnecessary nonce security rules, due to issues with caching services
 * Changed esc_html to wp_kses_post in the post-cards
