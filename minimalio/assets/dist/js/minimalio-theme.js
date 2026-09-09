@@ -26,14 +26,26 @@ jQuery(document).ready(function ($) {
   ) {
     $("#wrapper-header").css("position", "fixed");
   }
-  var $header_wrapper = $("#wrapper-header").outerHeight();
-  if (
-    $("#wrapper-header").hasClass("header__fixed") &&
-    !$("#wrapper-header").hasClass("transparent") &&
-    !$("#page").hasClass("vertical")
-  ) {
-    $("#page-content").css("margin-top", $header_wrapper);
+  function updateHeaderHeightDependents() {
+    var $header_wrapper = $("#wrapper-header").outerHeight();
+    if (
+      $("#wrapper-header").hasClass("header__fixed") &&
+      !$("#wrapper-header").hasClass("transparent") &&
+      !$("#page").hasClass("vertical")
+    ) {
+      $("#page-content").css("margin-top", $header_wrapper);
+    }
+    // mobile menu logo wrapper height
+    $(".mobile-menu__logo-wrap").css("min-height", $header_wrapper);
   }
+  updateHeaderHeightDependents();
+
+  // recalculate on resize - the mobile button/logo layout changes with viewport width
+  var headerResizeTimeout;
+  $(window).on("resize", function () {
+    clearTimeout(headerResizeTimeout);
+    headerResizeTimeout = setTimeout(updateHeaderHeightDependents, 150);
+  });
 
   // close mobile menu when menu item clicked, or open submenu if link has no real href
   $(".mobile-menu__link").click(function (e) {
@@ -49,9 +61,6 @@ jQuery(document).ready(function ($) {
       $(this).closest(".menu-item-has-children").toggleClass("mobile-menu__item--active");
     }
   });
-
-  // mobile menu logo wrapper height
-  $(".mobile-menu__logo-wrap").css("min-height", $header_wrapper);
 
   // mobile menu jump focus to the close button after the last item
 
@@ -818,6 +827,7 @@ jQuery(document).ready(function($){
     var author = $('.posts-ajax__posts').data('author');
     var nr_columns = $('.posts-ajax__posts').data('columns');
     var nr_posts = $('.posts-ajax__posts').data('posts_number');
+    var isLoadingPosts = false;
 
 
     function hoverVideoInit() {
@@ -855,6 +865,11 @@ jQuery(document).ready(function($){
     function loadMorePosts() {
         $('.my-posts').on('click', '#load-more-ajax', function (e) {
             e.preventDefault();
+
+            if (isLoadingPosts) {
+                return;
+            }
+
             var parent = $(this).parent();
             var parent_wrap = parent.parent();
             var current_cards = parent_wrap.find('.post-card');
@@ -892,6 +907,8 @@ jQuery(document).ready(function($){
               'post_type': post_type,
             };
 
+            isLoadingPosts = true;
+
             $.ajax({
               url : wpAjaxLoad.ajax_loadUrl,
               data : data,
@@ -907,6 +924,9 @@ jQuery(document).ready(function($){
                   masoneryEffect();
 
                   hoverVideoInit();
+              },
+              complete: function() {
+                  isLoadingPosts = false;
               }
             });
 
@@ -943,6 +963,14 @@ jQuery(document).ready(function($){
 
     function loadMoreOnScroll() {
       dettachScrollEvent();
+
+      /** A request (from scroll or from the button) is already in flight.
+          Don't start another one - just re-arm the listener for later. */
+      if (isLoadingPosts) {
+        attachScrollEvent();
+        return;
+      }
+
       if (cardAuto) {
         $(document)
         .ajaxStart(function () {
@@ -953,6 +981,7 @@ jQuery(document).ready(function($){
         });
       setTimeout(function() { //this timeout simulates the delay from the ajax post
         // ajax call get data from server and append to the div
+        var ajaxStarted = false;
    if (($(this).scrollTop() > lastScroll)){
         var parent = $('.posts__row').parent(); //Get just the active category
         var target = $('.posts-ajax__tab.checked').data('label');
@@ -987,6 +1016,9 @@ jQuery(document).ready(function($){
             'post_type': post_type,
           };
 
+          ajaxStarted = true;
+          isLoadingPosts = true;
+
           $.ajax({
             url: wpAjaxLoad.ajax_loadUrl,
             data: data,
@@ -1001,17 +1033,27 @@ jQuery(document).ready(function($){
               masoneryEffect();
               hoverVideoInit();
             },
+            complete: function() {
+              /** Only now - once the DOM actually reflects the new posts -
+                  is it safe to let another load be triggered. */
+              isLoadingPosts = false;
+              attachScrollEvent();
+            },
           });
           }
           }
         }
-        attachScrollEvent();
+        /** No ajax call was made (nothing to wait for), so it's safe to
+            re-arm the scroll listener right away. */
+        if (!ajaxStarted) {
+          attachScrollEvent();
+        }
       }, 500);
     }
     }
 
     function infiNLoader() {
-    if ((winCached.scrollTop() + winCached.height() > docCached.height() - footerTotal) - 100)  {
+    if (winCached.scrollTop() + winCached.height() > docCached.height() - footerTotal - 100)  {
       loadMoreOnScroll();
       lastScroll = $(this).scrollTop();
       //alert("near bottom! Adding more dummy content for infinite scrolling");

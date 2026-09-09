@@ -45,6 +45,9 @@ The premium version which is activated by purchasing and activating the Minimali
 
 == Changelog ==
 
+= 1.4.47 =
+* Minor bug fixes - loading on scroll, sidebar, mobile menu 
+
 = 1.4.46 =
 * Issue issue with Minimalio Gallery block in the Gutenberg editor. 
 * New Rosa demo.

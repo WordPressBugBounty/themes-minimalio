@@ -106,7 +106,7 @@ p.minimalio-moto {
   border: 1px solid #000;
   box-shadow: none;
   text-shadow: none;
-  padding: 10px 20px !important;
+  padding: 5px 20px !important;
   font-size: 14px !important;
 }
 
@@ -467,6 +467,7 @@ p.minimalio-moto {
 
 /* Welcome Notice Styles */
 .minimalio-welcome-notice {
+  background-color: white;
   border: 1px solid #000 !important;
   border-left: 1px solid #000 !important;
 }

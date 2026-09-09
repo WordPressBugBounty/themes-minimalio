@@ -8,11 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'right-sidebar' ) ) {
-	return;
-}
-
-if ( is_singular( 'post' ) or is_home() or is_page_template( 'templates/pages/blog-template.php' ) ) {
+if ( is_singular( 'post' ) || is_home() || is_page_template( 'templates/pages/blog-template.php' ) ) {
 	$sidebar = 'right-sidebar-blog';
 	// when both sidebars turned on reduce col size to 2 from 3.
 	if ( is_singular( 'post' ) ) {
@@ -26,6 +22,10 @@ if ( is_singular( 'post' ) or is_home() or is_page_template( 'templates/pages/bl
 } else {
 	$sidebar     = 'right-sidebar';
 	$sidebar_pos = get_theme_mod( 'minimalio_settings_sidebar_position' );
+}
+
+if ( ! is_active_sidebar( $sidebar ) ) {
+	return;
 }
 
 ?>
